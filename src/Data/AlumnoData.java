@@ -1,7 +1,7 @@
 /*
     AlumnoData
  */
-package data;
+package Data;
 
 import Modelos.Alumno;
 import java.sql.Connection;
