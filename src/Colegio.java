@@ -9,10 +9,7 @@ import Modelos.Materia;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Grupo3_LabI
- */
+
 public class Colegio {
 
     public static void main(String[] args) {

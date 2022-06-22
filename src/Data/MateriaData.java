@@ -18,10 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Best smite LAS
- */
+
 public class MateriaData {
 
     private Connection con = null;
