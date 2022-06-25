@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/transversal_grupo4/Transversal_grupo4.java</file>
+            <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Data/CursadaData.java</file>
+            <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Data/MateriaData.java</file>
+            <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Data/AlumnoData.java</file>
             <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Modelos/Alumno.java</file>
-            <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Modelos/Materia.java</file>
             <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Modelos/Cursada.java</file>
+            <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Colegio.java</file>
             <file>file:/C:/Users/duvar/OneDrive/Documentos/GitHub/transversal_grupo4/src/Data/Conexion.java</file>
         </group>
     </open-files>
