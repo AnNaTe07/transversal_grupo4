@@ -27,6 +27,15 @@ public class Cursada{
         return id;
     }
 
+    public Alumno getAlumno() {
+        return alumno;
+    }
+
+    public Materia getMateria() {
+        return materia;
+    }
+
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -39,6 +48,15 @@ public class Cursada{
         this.alumno = idAlumno;
     }
 
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
+
+    
     public Materia getIdMateria() {
         return materia;
     }
