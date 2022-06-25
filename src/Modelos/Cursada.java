@@ -7,16 +7,16 @@ public class Cursada{
     private Materia materia;
     private double nota;
 
-    public Cursada(int id, Alumno idAlumno, Materia idMateria, double nota) {
+    public Cursada(int id, Alumno alumno, Materia materia, double nota) {
         this.id = id;
-        this.alumno = idAlumno;
-        this.materia = idMateria;
+        this.alumno = alumno;
+        this.materia = materia;
         this.nota = nota;
     }
 
-    public Cursada(Alumno idAlumno, Materia idMateria, double nota) {
-        this.alumno = idAlumno;
-        this.materia = idMateria;
+    public Cursada(Alumno alumno, Materia materia, double nota) {
+        this.alumno = alumno;
+        this.materia = materia;
         this.nota = nota;
     }
 
@@ -31,19 +31,19 @@ public class Cursada{
         this.id = id;
     }
 
-    public Alumno getIdAlumno() {
+    public Alumno getAlumno() {
         return alumno;
     }
 
-    public void setIdAlumno(Alumno idAlumno) {
+    public void setAlumno(Alumno idAlumno) {
         this.alumno = idAlumno;
     }
 
-    public Materia getIdMateria() {
+    public Materia getMateria() {
         return materia;
     }
 
-    public void setIdMateria(Materia idMateria) {
+    public void setMateria(Materia idMateria) {
         this.materia = idMateria;
     }
 
