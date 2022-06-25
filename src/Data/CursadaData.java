@@ -1,6 +1,13 @@
+/*
+    CursadaData
+ */
+package data;
 
+<<<<<<< Updated upstream
 package Data;
 
+=======
+>>>>>>> Stashed changes
 import Modelos.Alumno;
 import Modelos.Cursada;
 import Modelos.Materia;
@@ -14,6 +21,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class CursadaData {
+<<<<<<< Updated upstream
     private Connection con = null;
     private AlumnoData ad;
     private MateriaData md;
@@ -99,5 +107,81 @@ public class CursadaData {
     
     
     
+=======
+    
+     private Connection con = null;
+    
+    private AlumnoData alumData;
+    private MateriaData materiaData;
+
+    public CursadaData(Conexion conexion) {
+       
+            this.con = conexion.getConexion();
+            this.alumData=new AlumnoData(conexion);
+            this.materiaData=new MateriaData(conexion);
+            
+        
+    }
+    
+    public boolean  guardarInscripcion(Cursada cursada) {
+        boolean insc=false;
+        try {
+            String sql = "INSERT INTO cursada (idAlumno, idMateria, nota) VALUES ( ? , ? , ? );";
+
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, cursada.getAlumno().getIdAlumno());
+            ps.setInt(2, cursada.getMateria().getIdMateria());
+            ps.setDouble(3, cursada.getNota());
+
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+
+            if (rs.next()) {
+                cursada.setId(rs.getInt("id"));
+               // JOptionPane.showMessageDialog(null, "Se inscribió al alumno correctamente");
+               insc=true;
+            } else {
+                JOptionPane.showMessageDialog(null, "No se pudo guardar Inscripción");
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "El alumno ya está inscripto en esta materia " + ex.getMessage());
+        }
+        return insc;
+    }
+    
+    public List<Cursada> obtenerInscripciones() {
+        ArrayList<Cursada> inscripciones = new ArrayList();
+        try {
+            String sql = "SELECT * FROM cursada;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ResultSet resultSet = ps.executeQuery();
+            Cursada inscripcion;
+            while (resultSet.next()) {
+                inscripcion = new Cursada();
+                inscripcion.setId(resultSet.getInt("id"));
+
+                Alumno a = alumData.obtenerAlumnoXId(resultSet.getInt("idAlumno"));
+                inscripcion.setAlumno(a);
+
+                Materia m = materiaData.obtenerMateriaPorID(resultSet.getInt("idMateria"));
+                inscripcion.setMateria(m);
+
+                inscripcion.setNota(resultSet.getDouble("nota"));
+
+                inscripciones.add(inscripcion);
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al obtener las inscripciones: " + ex.getMessage());
+        }
+
+        return inscripciones;
+    }
+
+>>>>>>> Stashed changes
     
 }

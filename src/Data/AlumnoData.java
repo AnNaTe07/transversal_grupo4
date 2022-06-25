@@ -13,10 +13,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author Grupo3_LabI
- */
+
 public class AlumnoData {
      private Connection con = null;
 
