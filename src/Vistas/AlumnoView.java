@@ -1,22 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vistas;
 
-/**
- *
- * @author Usuario
- */
+import Modelos.Alumno;
+import java.util.HashSet;
+
 public class AlumnoView extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form AlumnoView
-     */
-    public AlumnoView() {
+  private HashSet <Alumno> listaAlumnos;
+  
+    public AlumnoView(HashSet <Alumno> listaAlumnos) {
         initComponents();
+        this.listaAlumnos=listaAlumnos;
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

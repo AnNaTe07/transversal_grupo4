@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Vistas;
 
-/**
- *
- * @author Usuario
- */
+import Modelos.Materia;
+import java.util.HashSet;
+
 public class MateriaView extends javax.swing.JInternalFrame {
 
-    /** Creates new form MateriaView */
-    public MateriaView() {
+     private HashSet <Materia> listaMaterias;
+     
+    public MateriaView(HashSet <Materia> listaMaterias) {
         initComponents();
+        this.listaMaterias=listaMaterias;
     }
 
     /** This method is called from within the constructor to
@@ -26,15 +23,109 @@ public class MateriaView extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jtId = new javax.swing.JTextField();
+        jtNombeMateria = new javax.swing.JTextField();
+        jtAño = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+
+        jLabel1.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jLabel1.setText("Id materia");
+
+        jLabel2.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jLabel2.setText("Materia");
+
+        jLabel3.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jLabel3.setText("Año");
+
+        jtId.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtId.setText("jTextField1");
+
+        jtNombeMateria.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtNombeMateria.setText("jTextField2");
+
+        jtAño.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtAño.setText("jTextField3");
+
+        jButton1.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jButton1.setText("Buscar");
+
+        jButton2.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jButton2.setText("Guardar");
+
+        jButton3.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jButton3.setText("Actualizar");
+
+        jButton4.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jButton4.setText("Borrar");
+
+        jLabel4.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
+        jLabel4.setText("Formulario de Materias");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jtId, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                            .addComponent(jtNombeMateria)
+                            .addComponent(jtAño))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(35, 35, 35))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(jLabel4)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addGap(65, 65, 65)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtNombeMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4))
+                .addContainerGap())
         );
 
         pack();
@@ -42,6 +133,18 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jtAño;
+    private javax.swing.JTextField jtId;
+    private javax.swing.JTextField jtNombeMateria;
     // End of variables declaration//GEN-END:variables
 
 }

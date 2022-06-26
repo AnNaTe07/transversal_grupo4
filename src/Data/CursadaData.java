@@ -3,9 +3,7 @@
  */
 
 
-
 package Data;
-
 
 
 import Modelos.Alumno;
@@ -25,6 +23,7 @@ public class CursadaData {
     private Connection con = null;
     private AlumnoData ad;
     private MateriaData md;
+    
     public CursadaData(Conexion conexion) {
         con = conexion.getConexion();
         this.ad = new AlumnoData(conexion);
@@ -104,6 +103,37 @@ public class CursadaData {
         }
         return exito;
     }
+    
+    //borrar inscripcion
+    
+    public boolean borrarInscripcion(Alumno alumno, Materia materia){
+        boolean borrado = false;
+        try{
+            String sql = "DELETE FROM cursada WHERE cursada.idAlumno = ? AND cursada.idMateria= ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, alumno.getIdAlumno());
+            ps.setInt(2, materia.getIdMateria());
+            
+            int rs = ps.executeUpdate();
+            if(rs != 0){
+                borrado = true;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se puede borrar la inscripcion");
+            }
+            ps.close();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return borrado;
+    }
+    
+    //Dado un alumno nos devuelva las materias en las que está inscripto
+    
+    
+    //Dado un alumno nos devuelva las materias en las que NO está inscripto
+    
+    
+    //Dada una materia nos devuelva los alumnos inscriptos en ella.
     
     
    

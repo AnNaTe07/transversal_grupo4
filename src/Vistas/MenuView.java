@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vistas;
 
-/**
- *
- * @author Usuario
- */
+import Modelos.Alumno;
+import Modelos.Materia;
+import java.util.HashSet;
+
 public class MenuView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuView
-     */
+   private HashSet <Alumno> listaAlumnos = new HashSet<>();
+   private HashSet <Materia> listaMaterias = new HashSet<>();
+   
     public MenuView() {
         initComponents();
     }
@@ -27,21 +23,99 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        escritorio = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jmAlumnos = new javax.swing.JMenu();
+        jmMaterias = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 268, Short.MAX_VALUE)
+        );
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jmAlumnos.setText("Alumnos");
+        jmAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmAlumnosActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jmAlumnos);
+
+        jmMaterias.setText("Materias");
+        jmMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmMateriasActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jmMaterias);
+
+        jMenu4.setText("Actualizar Notas");
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("jMenu5");
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("jMenu6");
+        jMenuBar1.add(jMenu6);
+
+        jMenu7.setText("jMenu7");
+        jMenuBar1.add(jMenu7);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(escritorio))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmAlumnosActionPerformed
+       
+        escritorio.removeAll();
+        AlumnoView av= new AlumnoView(listaAlumnos);
+        av.setVisible(true);
+        escritorio.add(av);      
+        escritorio.moveToFront(av);
+        escritorio.repaint();
+        
+    }//GEN-LAST:event_jmAlumnosActionPerformed
+
+    private void jmMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmMateriasActionPerformed
+       
+        escritorio.removeAll();
+        MateriaView mv= new MateriaView(listaMaterias);
+        mv.setVisible(true);
+        escritorio.add(mv);      
+        escritorio.moveToFront(mv);
+        escritorio.repaint();
+        
+    }//GEN-LAST:event_jmMateriasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +153,14 @@ public class MenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jmAlumnos;
+    private javax.swing.JMenu jmMaterias;
     // End of variables declaration//GEN-END:variables
 }
