@@ -129,13 +129,64 @@ public class CursadaData {
     
     //Dado un alumno nos devuelva las materias en las que está inscripto
     
+    public List<Cursada> inscripcionesAlumno(Alumno alumno){
+        ArrayList<Cursada> listaAlumno = new ArrayList();
+        try{
+            String sql = "SELECT * FROM cursada where idAlumno=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, alumno.getIdAlumno());
+            ResultSet rs = ps.executeQuery();
+            Cursada inscripcion;
+            while(rs.next()){
+                inscripcion = new Cursada();
+                       
+                Materia m = md.obtenerMateriaXId(rs.getInt("idMateria"));
+                inscripcion.setMateria(m);
+                
+                inscripcion.setNota(rs.getDouble("nota"));
+                
+                listaAlumno.add(inscripcion);
+            }
+           ps.close();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "No se pudo obtener las inscripciones:" + ex);
+        }
+        return listaAlumno;
+    } 
     
     //Dado un alumno nos devuelva las materias en las que NO está inscripto
-    
-    
+    /*
+    public List<Cursada> noInscripto(Alumno alumno){     
+      
+      
+    } 
+*/
     //Dada una materia nos devuelva los alumnos inscriptos en ella.
     
-    
+    public List<Cursada> inscripcionesEnMateria(Materia materia){
+        ArrayList<Cursada> listaMaterias = new ArrayList();
+        try{
+            String sql = "SELECT * FROM cursada where idMateria=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, materia.getIdMateria());
+            ResultSet rs = ps.executeQuery();
+            Cursada inscripcion;
+            while(rs.next()){
+                inscripcion = new Cursada();
+                       
+                Alumno a = ad.obtenerAlumnoXDNI(rs.getInt("idAlumno"));
+                inscripcion.setAlumno(a);
+                                
+                inscripcion.setNota(rs.getDouble("nota"));
+                
+                listaMaterias.add(inscripcion);
+            }
+           ps.close();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "No se pudo obtener las inscripciones:" + ex);
+        }
+        return listaMaterias;
+    } 
    
     
 }

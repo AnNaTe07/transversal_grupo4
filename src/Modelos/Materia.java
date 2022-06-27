@@ -57,7 +57,7 @@ public class Materia {
 
     @Override
     public String toString() {
-        return "Materia{" + "\nidMateria:" + idMateria + ", nombre=" + nombre + ", anio=" + anio + ", activo=" + activo + '}';
+        return "Materia" + "\nidMateria:" + idMateria + ", nombre=" + nombre + ", anio=" + anio + ", activo=" + activo;
     }
 
     @Override
