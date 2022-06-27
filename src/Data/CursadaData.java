@@ -4,7 +4,7 @@
 package Data;
 
 import Modelos.Alumno;
-import Modelos.Cursada;
+import Modelos.Inscripcion;
 import Modelos.Materia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +27,7 @@ public class CursadaData {
         this.md = new MateriaData(conexion);
     }
 
-    public boolean guardarCursada(Cursada inscripcion) {
+    public boolean guardarCursada(Inscripcion inscripcion) {
         boolean exito = false;
         try {
             String sql = "INSERT INTO cursada(idAlumno,idMateria,nota) VALUES (?, ?, ?);";
@@ -50,15 +50,15 @@ public class CursadaData {
         return exito;
     }
 
-    public List<Cursada> obtenerCursadas() {
-        ArrayList<Cursada> listaCursada = new ArrayList();
+    public List<Inscripcion> obtenerCursadas() {
+        ArrayList<Inscripcion> listaCursada = new ArrayList();
         try {
             String sql = "SELECT * FROM cursada";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            Cursada inscripcion;
+            Inscripcion inscripcion;
             while (rs.next()) {
-                inscripcion = new Cursada();
+                inscripcion = new Inscripcion();
                 inscripcion.setId(rs.getInt("id"));
 
                 Alumno a = ad.obtenerAlumnoXId(rs.getInt("idAlumno"));
@@ -122,16 +122,16 @@ public class CursadaData {
     }
 
     //Dado un alumno nos devuelva las materias en las que está cursando
-    public List<Cursada> cursadasXAlumno(Alumno alumno) {
-        ArrayList<Cursada> listaAlumno = new ArrayList();
+    public List<Inscripcion> cursadasXAlumno(Alumno alumno) {
+        ArrayList<Inscripcion> listaAlumno = new ArrayList();
         try {
             String sql = "SELECT * FROM cursada where idAlumno=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, alumno.getIdAlumno());
             ResultSet rs = ps.executeQuery();
-            Cursada inscripcion;
+            Inscripcion inscripcion;
             while (rs.next()) {
-                inscripcion = new Cursada();
+                inscripcion = new Inscripcion();
 
                 Materia m = md.obtenerMateriaXId(rs.getInt("idMateria"));
                 inscripcion.setMateria(m);
@@ -156,16 +156,16 @@ public class CursadaData {
     } 
      */
     //Dada una materia nos devuelva los alumnos inscriptos en ella.
-    public List<Cursada> cursadaXMateria(Materia materia) {
-        ArrayList<Cursada> listaMaterias = new ArrayList();
+    public List<Inscripcion> cursadaXMateria(Materia materia) {
+        ArrayList<Inscripcion> listaMaterias = new ArrayList();
         try {
             String sql = "SELECT * FROM cursada where idMateria=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, materia.getIdMateria());
             ResultSet rs = ps.executeQuery();
-            Cursada inscripcion;
+            Inscripcion inscripcion;
             while (rs.next()) {
-                inscripcion = new Cursada();
+                inscripcion = new Inscripcion();
 
                 Alumno a = ad.obtenerAlumnoXId(rs.getInt("idAlumno"));
                 inscripcion.setAlumno(a);

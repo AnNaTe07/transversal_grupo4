@@ -6,7 +6,7 @@ import Data.AlumnoData;
 import Data.CursadaData;
 import Data.MateriaData;
 import Modelos.Alumno;
-import Modelos.Cursada;
+import Modelos.Inscripcion;
 import Modelos.Materia;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -158,7 +158,7 @@ public class Colegio {
                
         alumno = ad.obtenerAlumnoXId(5);
         materia = md.obtenerMateriaXId(3);
-        Cursada inscribir = new Cursada(alumno, materia, 9);
+        Inscripcion inscribir = new Inscripcion(alumno, materia, 9);
         
 //        if(cd.guardarCursada(inscribir)){
 //            System.out.println("La inscripcion se realizo con exito...");
