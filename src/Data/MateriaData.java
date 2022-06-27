@@ -1,4 +1,3 @@
-
 package Data;
 
 import Modelos.Alumno;
@@ -13,7 +12,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-
 
 public class MateriaData {
 
@@ -40,11 +38,10 @@ public class MateriaData {
 
             ResultSet rs = ps.getGeneratedKeys();
 
-            
             if (rs.next()) {
                 materia.setIdMateria(rs.getInt(1));
             } else {
-                
+
                 insert = false;
             }
 
@@ -183,7 +180,7 @@ public class MateriaData {
         }
         return modificado;
     }
-    
+
     public boolean activarMateria(int idMateria) {
         String sql = "UPDATE materia SET  activo = 1 WHERE idMateria = ?";
         boolean activado = false;
@@ -204,4 +201,5 @@ public class MateriaData {
 
     }
 
+    
 }

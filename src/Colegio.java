@@ -196,7 +196,9 @@ public class Colegio {
         
         //System.out.println(cd.cursadaXMateria(materia));
         
+        //MOSTRAR MATERIAS NO INSCRIPTAS DEL ALUMNO X
         
+        //System.out.println(cd.obtenerMateriasNoCursadas(alumno));
 
     }
 }
