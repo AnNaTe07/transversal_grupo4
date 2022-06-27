@@ -183,5 +183,25 @@ public class MateriaData {
         }
         return modificado;
     }
+    
+    public boolean activarMateria(int idMateria) {
+        String sql = "UPDATE materia SET  activo = 1 WHERE idMateria = ?";
+        boolean activado = false;
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idMateria);
+
+            if (ps.executeUpdate() != 0) {
+
+                activado = true;
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error de conexion desde activar materia ");
+        }
+        return activado;
+
+    }
 
 }

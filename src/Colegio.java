@@ -11,6 +11,7 @@ import Modelos.Materia;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -28,115 +29,174 @@ public class Colegio {
         Alumno alumno;
         Materia materia;
         
-       
+        //------------------------------ALUMNOS-----------------------------------
+        
         //agregamos alumnos
-        /*
-        LocalDate fecha=LocalDate.parse("1995-07-20");
         
-        alumno= new Alumno("Abdala","Samir",fecha,22222222,true);
-        ad.agregarAlumno(alumno);
-        
-        alumno= new Alumno("Cejas","Luciano",fecha,33333333,true);
-        ad.agregarAlumno(alumno);
-        
-        alumno= new Alumno("Duvara","Claudio",fecha,44444444,true);
-        ad.agregarAlumno(alumno);      
-             
-        alumno= new Alumno("Tello","Andrea Natalia",fecha,29265938,true);
-        ad.agregarAlumno(alumno);*/
+        LocalDate fecha=LocalDate.parse("1997-01-29");
+//        
+//        alumno= new Alumno("Abdala","Samir",fecha,22222222,true);
+//        ad.agregarAlumno(alumno);
+//        
+//        alumno= new Alumno("Cejas","Luciano",fecha,33333333,true);
+//        ad.agregarAlumno(alumno);
+//        
+//        alumno= new Alumno("Duvara","Claudio",fecha,44444444,true);
+//        ad.agregarAlumno(alumno);      
+//             
+//        alumno= new Alumno("Tello","Andrea Natalia",fecha,29265938,true);
+//        ad.agregarAlumno(alumno);
         
         //modificar alumno
+     
+          alumno = new Alumno(5,"Cejas","Luciano Maximiliano",fecha,39993664,true);
+//          if(ad.modificarAlumno(alumno)){
+//              System.out.println("Alumno modificado con exito...");
+//          }else{
+//              System.out.println("No se pudo modificar");
+//          }
         
+        //ELIMINAR ALUMNO
+        
+//        if (ad.borrarAlumno(alumno.getIdAlumno())) {
+//            System.out.println("Alumno eliminado con exito...");
+//        } else {
+//            System.out.println("No se pudo elimnar el alumno");
+//        }
+
+
+        //ACTIVAR ALUMNO
+
+//        if (ad.activarAlumno(alumno.getIdAlumno())) {
+//            System.out.println("Se ha dado de alta con exito el alumno...");
+//        } else {
+//            System.out.println("No se pudo dar de alta el alumno");
+//        }
+//        
+        
+        //OBTENER ALUMNOS
+
+//        List<Alumno> alumnos = ad.obtenerAlumnos();
+//        System.out.println(alumnos);
+//        
+        
+        //OBTENER ALUMNO XID
+        
+//        System.out.println(ad.obtenerAlumnoXId(alumno.getIdAlumno()));
+        
+        //OBTENER ALUMNO XNOMBRE
+        
+//        System.out.println(ad.obtenerAlumnoXDNI(alumno.getDni()));
+
+
+//--------------------------------MATERIAS--------------------------------------
+
+
         //agregamos materias
-        /*
-        materia= new Materia("Fundamentos de programacion", 1, true);
-        md.agregarMateria(materia);
         
-        materia= new Materia("Java", 1, true);
-        md.agregarMateria(materia);
+//        materia= new Materia("Fundamentos de programacion", 1, true);
+//        md.agregarMateria(materia);
+//        
+//        materia= new Materia("Java", 1, true);
+//        md.agregarMateria(materia);
+//        
+//        materia= new Materia("Web 1", 1, true);
+//        md.agregarMateria(materia);
+//        
+//        materia= new Materia("Laboratorio 1", 1, true);
+//        md.agregarMateria(materia);
+//        
+//        materia= new Materia("Matematicas", 1, true);
+//        md.agregarMateria(materia);
+//        
+//        materia= new Materia("Estructura de datos", 1, true);
+//        md.agregarMateria(materia);
+
         
-        materia= new Materia("Web 1", 1, true);
-        md.agregarMateria(materia);
+        //MODIFICAR MATERIA
         
-        materia= new Materia("Laboratorio 1", 1, true);
-        md.agregarMateria(materia);
+        materia= new Materia(3,"Fundamentos de programacion ", 3, true);
+//        
+//        if(md.modificarMateria(materia)){
+//            System.out.println("Materia modificada con exito.....");
+//        }else{
+//            System.out.println("No se pudo modificar la materia...");
+//        }
+
+        //ELIMINAR MATERIA
         
-        materia= new Materia("Matematicas", 1, true);
-        md.agregarMateria(materia);
+//        if(md.borrarMateria(materia.getIdMateria())){
+//            System.out.println("Materia eliminada con exito.....");
+//        }else{
+//            System.out.println("No se pudo eliminar la materia...");
+//        }
         
-        materia= new Materia("Estructura de datos", 1, true);
-        md.agregarMateria(materia);
-*/
+        //ACTIVAR MATERIA
+
+//        if(md.activarMateria(materia.getIdMateria())){
+//            System.out.println("Se ha dado de alta la materia con exito...");
+//        }else{
+//            System.out.println("No se pudo dar de alta la materia...");
+//        }        
         
-        //modificar materia
+        //OBTENER MATERIAS
+
+        //System.out.println(md.obtenerMaterias());
+               
+        //OBTENER MATERIAS POR NOMBRE
+        
+        //System.out.println(md.obtenerMateriaXNombre(materia.getNombre()));
+        
+        //OBTENER MATERIA POR ID
+        
+        //System.out.println(md.obtenerMateriaXId(materia.getIdMateria()));
+        
+        
+        //----------------------------CURSADA-----------------------------------
         
         //inscribir alumno
-               /*
+               
         alumno = ad.obtenerAlumnoXId(5);
-        materia = md.obtenerMateriaXId(11);
-        Cursada inscribir = new Cursada(alumno, materia, 7);
-        cd.guardarInscripcion(inscribir);
-*/
+        materia = md.obtenerMateriaXId(3);
+        Cursada inscribir = new Cursada(alumno, materia, 9);
         
-        //mostrar listado de inscriptos
-        /*
-        List <Cursada> listadoInscriptos=cd.obtenerInscripciones();
+//        if(cd.guardarCursada(inscribir)){
+//            System.out.println("La inscripcion se realizo con exito...");
+//        }else{
+//            System.out.println("No se pudo realizar la inscripcion...");
+//        }
         
-        for(Cursada aux : listadoInscriptos){
-            System.out.println("Apellido y nombre: "+aux.getAlumno().getApellido()+" "+aux.getAlumno().getNombre());
-            System.out.println("Materia: "+aux.getMateria());
-            System.out.println("Nota: "+aux.getNota());
-        }*/
+        //MODIFICAR NOTA
+         
+//        if(cd.modificarNota(alumno,materia,10)){
+//            System.out.println("La nota fue modificada con exito...");
+//        }else{
+//            System.out.println("La nota no pudo ser modificada...");
+//        }
+
+        //OBTENER CURSADAS
         
-        //modificar nota
-       // cd.modificarNota(alumno, materia, 7);
-       
-       //Borrar inscripcion
-       /*
-       alumno = ad.obtenerAlumnoXId(4);
-       materia = md.obtenerMateriaXId(11);
-       boolean borrarInscripcion = cd.borrarInscripcion(alumno, materia);
-*/
-       //lista de inscripciones por alumno
-       /*
-       alumno = ad.obtenerAlumnoXId(4);
-       
-       List <Cursada> listado=cd.inscripcionesAlumno(alumno);
+        //System.out.println(cd.obtenerCursadas());
         
-        System.out.println("Alumno: "+alumno.getApellido()+" "+alumno.getNombre());
-        System.out.println("Inscripto en: ");
-        for(Cursada aux : listado){     
-            System.out.println("-----------------------------");
-            System.out.println("Materia: "+aux.getMateria());
-            System.out.println("Nota: "+aux.getNota());
-        }
-*/
-        //lista de materias no inscriptas por alumno
-        /*
-         alumno = ad.obtenerAlumnoXId(4);
-       
-       List <Cursada> listadoNoI=cd.noInscripto(alumno);
+        //BORRAR CURSADA
         
-        System.out.println("Alumno: "+alumno.getApellido()+" "+alumno.getNombre());
-        System.out.println("No inscripto en: ");
-        for(Cursada aux : listadoNoI){     
-            System.out.println("-----------------------------");
-            System.out.println("Materia: "+aux.getMateria());
-        }
-*/
+//        if(cd.borrarCursada(alumno, materia)){
+//            System.out.println("La cursada se dio de baja con exito...");
+//        }else{
+//            
+//            System.out.println("No se pudo dar de baja la cursada...");
+//        }
+
+
+        //MOSTRAR CURSADAS DE ALUMNO X
         
-        //Alumnos inscriptos en materia
+        //System.out.println(cd.cursadasXAlumno(alumno));
         
-        materia=md.obtenerMateriaXId(11);
+        //MOSTRAR CURSADA DE MATERIA X
         
-       List<Cursada> listaMaterias= cd.inscripcionesEnMateria(materia);
-        System.out.println("Materia: "+materia.getNombre()+", año: "+materia.getAnio());
-        System.out.println("Alumnos inscriptos:");
-        for(Cursada aux: listaMaterias){
-            System.out.println("------------------------------");
-            System.out.println("Alumno: "+ aux.getIdAlumno());
-            System.out.println("Nota: "+aux.getNota());
-        }
+        //System.out.println(cd.cursadaXMateria(materia));
+        
+        
 
     }
 }

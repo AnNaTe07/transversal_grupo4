@@ -85,30 +85,30 @@ public class Alumno {
         return "Alumno" + "\nApellido:" + apellido + "\nnombre:" + nombre + "\ndni:" + dni + "\nactivo:" + activo;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + this.idAlumno;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Alumno other = (Alumno) obj;
-        if (this.idAlumno != other.idAlumno) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 7;
+//        hash = 67 * hash + this.idAlumno;
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Alumno other = (Alumno) obj;
+//        if (this.idAlumno != other.idAlumno) {
+//            return false;
+//        }
+//        return true;
+//    }
     
     
     

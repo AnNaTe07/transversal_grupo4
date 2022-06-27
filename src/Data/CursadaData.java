@@ -30,7 +30,7 @@ public class CursadaData {
         this.md = new MateriaData(conexion);
     }
     
-    public boolean guardarInscripcion(Cursada inscripcion){
+    public boolean guardarCursada(Cursada inscripcion){
         boolean exito = false;
         try{
             String sql = "INSERT INTO cursada(idAlumno,idMateria,nota) VALUES (?, ?, ?);";
@@ -53,7 +53,7 @@ public class CursadaData {
         return exito;
     }
     
-    public List<Cursada> obtenerInscripciones(){
+    public List<Cursada> obtenerCursadas(){
         ArrayList<Cursada> listaCursada = new ArrayList();
         try{
             String sql = "SELECT * FROM cursada";
@@ -104,9 +104,9 @@ public class CursadaData {
         return exito;
     }
     
-    //borrar inscripcion
+    //borrar cursada
     
-    public boolean borrarInscripcion(Alumno alumno, Materia materia){
+    public boolean borrarCursada(Alumno alumno, Materia materia){
         boolean borrado = false;
         try{
             String sql = "DELETE FROM cursada WHERE cursada.idAlumno = ? AND cursada.idMateria= ?";
@@ -117,19 +117,17 @@ public class CursadaData {
             int rs = ps.executeUpdate();
             if(rs != 0){
                 borrado = true;
-            }else{
-                JOptionPane.showMessageDialog(null, "No se puede borrar la inscripcion");
             }
             ps.close();
         }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null,"Error de conexion en BORRAR CURSADA "+ex);
         }
         return borrado;
     }
     
-    //Dado un alumno nos devuelva las materias en las que está inscripto
+    //Dado un alumno nos devuelva las materias en las que está cursando
     
-    public List<Cursada> inscripcionesAlumno(Alumno alumno){
+    public List<Cursada> cursadasXAlumno(Alumno alumno){
         ArrayList<Cursada> listaAlumno = new ArrayList();
         try{
             String sql = "SELECT * FROM cursada where idAlumno=?";
@@ -139,10 +137,11 @@ public class CursadaData {
             Cursada inscripcion;
             while(rs.next()){
                 inscripcion = new Cursada();
-                       
+                                      
                 Materia m = md.obtenerMateriaXId(rs.getInt("idMateria"));
                 inscripcion.setMateria(m);
-                
+                inscripcion.setAlumno(alumno);
+                inscripcion.setId(rs.getInt("id"));              
                 inscripcion.setNota(rs.getDouble("nota"));
                 
                 listaAlumno.add(inscripcion);
@@ -163,7 +162,7 @@ public class CursadaData {
 */
     //Dada una materia nos devuelva los alumnos inscriptos en ella.
     
-    public List<Cursada> inscripcionesEnMateria(Materia materia){
+    public List<Cursada> cursadaXMateria(Materia materia){
         ArrayList<Cursada> listaMaterias = new ArrayList();
         try{
             String sql = "SELECT * FROM cursada where idMateria=?";
@@ -174,10 +173,11 @@ public class CursadaData {
             while(rs.next()){
                 inscripcion = new Cursada();
                        
-                Alumno a = ad.obtenerAlumnoXDNI(rs.getInt("idAlumno"));
+                Alumno a = ad.obtenerAlumnoXId(rs.getInt("idAlumno"));
                 inscripcion.setAlumno(a);
-                                
+                inscripcion.setMateria(materia);
                 inscripcion.setNota(rs.getDouble("nota"));
+                inscripcion.setId(rs.getInt("id"));
                 
                 listaMaterias.add(inscripcion);
             }

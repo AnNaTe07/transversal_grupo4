@@ -29,7 +29,7 @@ public class Conexion {
             conexion = DriverManager
                     .getConnection(url + "?useLegacyDatetimeCode=false&serverTimezone=UTC"
                             + "&user=" + usuario + "&password=" + password);
-            JOptionPane.showMessageDialog(null, "Conectado a la base de datos");
+            //JOptionPane.showMessageDialog(null, "Conectado a la base de datos");
             }
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "No se pudo establecer la conexion con la base de datos");
