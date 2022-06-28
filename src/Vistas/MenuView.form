@@ -27,22 +27,30 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmAlumnosActionPerformed"/>
           </Events>
           <SubComponents>
+<<<<<<< Updated upstream
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="jFormularioAlumno">
+>>>>>>> Stashed changes
               <Properties>
                 <Property name="text" type="java.lang.String" value="Formulario de Alumnos"/>
               </Properties>
               <Events>
+<<<<<<< Updated upstream
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormularioAlumnoActionPerformed"/>
+>>>>>>> Stashed changes
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jmMaterias">
+        <Menu class="javax.swing.JMenu" name="jfMaterias">
           <Properties>
             <Property name="text" type="java.lang.String" value="Materias"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmMateriasActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jfMateriasActionPerformed"/>
           </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
@@ -52,7 +60,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
+        <Menu class="javax.swing.JMenu" name="jInscripciones">
           <Properties>
             <Property name="text" type="java.lang.String" value="Inscripciones"/>
           </Properties>
@@ -64,7 +72,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
+        <Menu class="javax.swing.JMenu" name="jmNotas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cargar Notas"/>
           </Properties>
@@ -76,7 +84,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu6">
+        <Menu class="javax.swing.JMenu" name="jlistaAlumXMateria">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultas"/>
           </Properties>
