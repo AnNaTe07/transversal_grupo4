@@ -67,12 +67,8 @@ public class Colegio {
 
         //ACTIVAR ALUMNO
 
-//        if (ad.activarAlumno(alumno.getIdAlumno())) {
-//            System.out.println("Se ha dado de alta con exito el alumno...");
-//        } else {
-//            System.out.println("No se pudo dar de alta el alumno");
-//        }
-//        
+//        ad.activarAlumno(alumno.getIdAlumno());
+
         
         //OBTENER ALUMNOS
 
@@ -116,28 +112,19 @@ public class Colegio {
         //MODIFICAR MATERIA
         
         materia= new Materia(3,"Fundamentos de programacion ", 3, true);
-//        
-//        if(md.modificarMateria(materia)){
-//            System.out.println("Materia modificada con exito.....");
-//        }else{
-//            System.out.println("No se pudo modificar la materia...");
-//        }
+        
+        //md.modificarMateria(materia);
+
 
         //ELIMINAR MATERIA
         
-//        if(md.borrarMateria(materia.getIdMateria())){
-//            System.out.println("Materia eliminada con exito.....");
-//        }else{
-//            System.out.println("No se pudo eliminar la materia...");
-//        }
+//        md.borrarMateria(materia.getIdMateria());
+
         
         //ACTIVAR MATERIA
 
-//        if(md.activarMateria(materia.getIdMateria())){
-//            System.out.println("Se ha dado de alta la materia con exito...");
-//        }else{
-//            System.out.println("No se pudo dar de alta la materia...");
-//        }        
+//        md.activarMateria(materia.getIdMateria());
+        
         
         //OBTENER MATERIAS
 
@@ -160,19 +147,13 @@ public class Colegio {
         materia = md.obtenerMateriaXId(31);
         Inscripcion inscribir = new Inscripcion(alumno, materia, 9);
         
-//        if(cd.guardarCursada(inscribir)){
-//            System.out.println("La inscripcion se realizo con exito...");
-//        }else{
-//            System.out.println("No se pudo realizar la inscripcion...");
-//        }
+//        cd.guardarCursada(inscribir));
+
         
         //MODIFICAR NOTA
          
-//        if(cd.modificarNota(alumno,materia,10)){
-//            System.out.println("La nota fue modificada con exito...");
-//        }else{
-//            System.out.println("La nota no pudo ser modificada...");
-//        }
+//        cd.modificarNota(alumno,materia,10));
+
 
         //OBTENER CURSADAS
         
@@ -180,12 +161,8 @@ public class Colegio {
         
         //BORRAR CURSADA
         
-//        if(cd.borrarCursada(alumno, materia)){
-//            System.out.println("La cursada se dio de baja con exito...");
-//        }else{
-//            
-//            System.out.println("No se pudo dar de baja la cursada...");
-//        }
+//        cd.borrarCursada(alumno, materia));
+
 
 
         //MOSTRAR CURSADAS DE ALUMNO X
