@@ -3,15 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Data/AlumnoData.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Vistas/InscripcionView.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Data/CursadaData.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Vistas/MenuView.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Vistas/AlumnoView.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Vistas/MateriaView.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Colegio.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Modelos/Cursada.java</file>
-            <file>file:/C:/Users/Usuario/OneDrive/Documentos/NetBeansProjects/transversal_grupo4/src/Data/MateriaData.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Colegio.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Data/Conexion.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Data/CursadaData.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Vistas/MenuView.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Vistas/AlumnoView.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Vistas/MateriaView.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Modelos/Alumno.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Modelos/Materia.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Vistas/InscripcionView.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Data/MateriaData.java</file>
+            <file>file:/Users/Samir/Desktop/Universidad/Desarrollador%20de%20Software/Laboratorio%201/GitHub/transversal_grupo4/src/Data/AlumnoData.java</file>
         </group>
     </open-files>
 </project-private>
