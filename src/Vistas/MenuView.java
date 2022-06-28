@@ -23,6 +23,7 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem5 = new javax.swing.JMenuItem();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -40,6 +41,7 @@ public class MenuView extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jInscripciones = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
+<<<<<<< Updated upstream
         jmNotas = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 <<<<<<< Updated upstream
@@ -47,6 +49,14 @@ public class MenuView extends javax.swing.JFrame {
 =======
         jlistaAlumXMateria = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+>>>>>>> Stashed changes
+=======
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+
+        jMenuItem5.setText("jMenuItem5");
 >>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -126,10 +136,23 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(jInscripciones);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         jMenu5.setText("Cargar Notas");
         jMenuBar1.add(jMenu5);
+=======
+        jMenu2.setText("Cargar Notas");
+
+        jMenuItem7.setText("Manipulacion de notas");
+        jMenu2.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu2);
+>>>>>>> Stashed changes
 
         jMenu6.setText("Consultas");
+
+        jMenuItem6.setText("Listado de Alumnos por Materia");
+        jMenu6.add(jMenuItem6);
+
         jMenuBar1.add(jMenu6);
 =======
         jmNotas.setText("Manipulacion de Notas");
@@ -239,16 +262,28 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jFormularioAlumno;
     private javax.swing.JMenu jInscripciones;
     private javax.swing.JMenu jMenu1;
+<<<<<<< Updated upstream
+=======
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu6;
+>>>>>>> Stashed changes
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenu jfMaterias;
     private javax.swing.JMenu jlistaAlumXMateria;
+>>>>>>> Stashed changes
+=======
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
 >>>>>>> Stashed changes
     private javax.swing.JMenu jmAlumnos;
     private javax.swing.JMenu jmNotas;
