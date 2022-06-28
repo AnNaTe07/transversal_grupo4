@@ -157,7 +157,7 @@ public class Colegio {
         //inscribir alumno
                
         alumno = ad.obtenerAlumnoXId(16);
-        materia = md.obtenerMateriaXId(30);
+        materia = md.obtenerMateriaXId(31);
         Inscripcion inscribir = new Inscripcion(alumno, materia, 9);
         
 //        if(cd.guardarCursada(inscribir)){
@@ -196,15 +196,15 @@ public class Colegio {
         
         //MOSTRAR CURSADA DE MATERIA X
         
-        for (Inscripcion arg : cd.cursadaXMateria(materia)) {
-            System.out.println(arg);
-        }
+//        for (Inscripcion arg : cd.cursadaXMateria(materia)) {
+//            System.out.println(arg);
+//        }
         
         //MOSTRAR MATERIAS NO INSCRIPTAS DEL ALUMNO X
         
-//        for (Materia arg : cd.obtenerMateriasNoCursadas(alumno)) {
-//            System.out.println(arg);
-//        }
+        for (Materia arg : cd.obtenerMateriasNoCursadas(alumno)) {
+            System.out.println(arg);
+        }
 
     }
 }
