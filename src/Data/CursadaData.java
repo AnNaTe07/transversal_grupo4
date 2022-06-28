@@ -30,23 +30,37 @@ public class CursadaData {
     public boolean guardarCursada(Inscripcion inscripcion) {
         boolean exito = false;
         try {
-            String sql = "INSERT INTO cursada(idAlumno,idMateria,nota) VALUES (?, ?, ?);";
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, inscripcion.getAlumno().getIdAlumno());
-            ps.setInt(2, inscripcion.getMateria().getIdMateria());
-            ps.setDouble(3, inscripcion.getNota());
-            ps.executeUpdate();
+            String consulta = "SELECT * FROM cursada WHERE cursada.idAlumno = ? AND cursada.idMateria = ?";
+            PreparedStatement x = con.prepareStatement(consulta);
+            x.setInt(1, inscripcion.getAlumno().getIdAlumno());
+            x.setInt(2, inscripcion.getMateria().getIdMateria());
+            ResultSet s = x.executeQuery();
+            if (!s.next()) {
+                try {
+                    String sql = "INSERT INTO cursada(idAlumno,idMateria,nota) VALUES (?, ?, ?);";
+                    PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                    ps.setInt(1, inscripcion.getAlumno().getIdAlumno());
+                    ps.setInt(2, inscripcion.getMateria().getIdMateria());
+                    ps.setDouble(3, inscripcion.getNota());
+                    ps.executeUpdate();
 
-            ResultSet rs = ps.getGeneratedKeys();
-            if (rs.next()) {
-                inscripcion.setId(rs.getInt("id"));
-                exito = true;
-            } else {
-                JOptionPane.showMessageDialog(null, "No se puedo guardar la inscripcion:");
+                    ResultSet rs = ps.getGeneratedKeys();
+                    if (rs.next()) {
+                        inscripcion.setId(rs.getInt("id"));
+                        exito = true;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se puedo guardar la inscripcion:");
+                    }
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error de sintaxis:" + ex);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Alumno ya inscripto");
             }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de sintaxis:" + ex);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
         }
+
         return exito;
     }
 

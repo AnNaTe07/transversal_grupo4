@@ -40,13 +40,6 @@ public class Inscripcion{
         this.id = id;
     }
 
-    public Alumno getIdAlumno() {
-        return alumno;
-    }
-
-    public void setIdAlumno(Alumno idAlumno) {
-        this.alumno = idAlumno;
-    }
 
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
@@ -54,15 +47,6 @@ public class Inscripcion{
 
     public void setMateria(Materia materia) {
         this.materia = materia;
-    }
-
-    
-    public Materia getIdMateria() {
-        return materia;
-    }
-
-    public void setIdMateria(Materia idMateria) {
-        this.materia = idMateria;
     }
 
     public double getNota() {
