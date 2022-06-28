@@ -1,15 +1,19 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Vistas;
 
-import Modelos.Alumno;
-import Modelos.Materia;
-import java.util.HashSet;
-
+/**
+ *
+ * @author duvar
+ */
 public class MenuView extends javax.swing.JFrame {
 
-   private HashSet <Alumno> listaAlumnos = new HashSet<>();
-   private HashSet <Materia> listaMaterias = new HashSet<>();
-   
+    /**
+     * Creates new form MenuView
+     */
     public MenuView() {
         initComponents();
     }
@@ -23,129 +27,71 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        escritorio = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-<<<<<<< Updated upstream
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jmAlumnos = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jmMaterias = new javax.swing.JMenu();
-=======
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jmAlumnos = new javax.swing.JMenu();
-        jFormularioAlumno = new javax.swing.JMenuItem();
-        jfMaterias = new javax.swing.JMenu();
->>>>>>> Stashed changes
+        jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jInscripciones = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jmNotas = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-<<<<<<< Updated upstream
         jMenu6 = new javax.swing.JMenu();
-=======
-        jlistaAlumXMateria = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
->>>>>>> Stashed changes
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
-        escritorio.setLayout(escritorioLayout);
-        escritorioLayout.setHorizontalGroup(
-            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
-        );
-        escritorioLayout.setVerticalGroup(
-            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 269, Short.MAX_VALUE)
-        );
-
-        jMenu1.setText("Archivo");
+        jMenu2.setText("Archivo");
 
         jMenuItem1.setText("Salir");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Materias");
+
+        jMenuItem2.setText("Formulario de materias");
+        jMenu3.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Alumnos");
+
+        jMenuItem3.setText("Formulario de alumnos");
+        jMenu4.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Inscripciones");
+
+        jMenuItem4.setText("Formulario de inscripciones");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu5.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu1);
-
-        jmAlumnos.setText("Alumnos");
-        jmAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmAlumnosActionPerformed(evt);
-            }
-        });
-
-<<<<<<< Updated upstream
-        jMenuItem2.setText("Formulario de Alumnos");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jmAlumnos.add(jMenuItem2);
-=======
-        jFormularioAlumno.setText("Formulario de Alumnos");
-        jFormularioAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormularioAlumnoActionPerformed(evt);
-            }
-        });
-        jmAlumnos.add(jFormularioAlumno);
->>>>>>> Stashed changes
-
-        jMenuBar1.add(jmAlumnos);
-
-        jfMaterias.setText("Materias");
-        jfMaterias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jfMateriasActionPerformed(evt);
-            }
-        });
-
-        jMenuItem3.setText("Formulario de Materias");
-        jfMaterias.add(jMenuItem3);
-
-        jMenuBar1.add(jfMaterias);
-
-        jInscripciones.setText("Inscripciones");
-
-<<<<<<< Updated upstream
-        jMenuItem4.setText("Formulario de Inscripciones");
-        jMenu4.add(jMenuItem4);
-=======
-        jMenuItem4.setText("jMenuItem4");
-        jInscripciones.add(jMenuItem4);
->>>>>>> Stashed changes
-
-        jMenuBar1.add(jInscripciones);
-
-<<<<<<< Updated upstream
-        jMenu5.setText("Cargar Notas");
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("Consultas");
+        jMenu6.setText("Notas");
+
+        jMenuItem5.setText("Manipulacion de notas");
+        jMenu6.add(jMenuItem5);
+
         jMenuBar1.add(jMenu6);
-=======
-        jmNotas.setText("Manipulacion de Notas");
 
-        jMenuItem5.setText("jMenuItem5");
-        jmNotas.add(jMenuItem5);
+        jMenu7.setText("Consultas");
 
-        jMenuBar1.add(jmNotas);
+        jMenuItem6.setText("Listado de alumnos x materia");
+        jMenu7.add(jMenuItem6);
 
-        jlistaAlumXMateria.setText("Consultas");
-
-        jMenuItem6.setText("Listado de Alumnos por Materia");
-        jlistaAlumXMateria.add(jMenuItem6);
-
-        jMenuBar1.add(jlistaAlumXMateria);
->>>>>>> Stashed changes
+        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -153,51 +99,19 @@ public class MenuView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(escritorio))
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmAlumnosActionPerformed
-       
-        escritorio.removeAll();
-        AlumnoView av= new AlumnoView(listaAlumnos);
-        av.setVisible(true);
-        escritorio.add(av);      
-        escritorio.moveToFront(av);
-        escritorio.repaint();
-        
-    }//GEN-LAST:event_jmAlumnosActionPerformed
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
 
-    private void jfMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfMateriasActionPerformed
-       
-        escritorio.removeAll();
-        MateriaView mv= new MateriaView(listaMaterias);
-        mv.setVisible(true);
-        escritorio.add(mv);      
-        escritorio.moveToFront(mv);
-        escritorio.repaint();
-        
-    }//GEN-LAST:event_jfMateriasActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jFormularioAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormularioAlumnoActionPerformed
-            // TODO add your handling code here:
-    }//GEN-LAST:event_jFormularioAlumnoActionPerformed
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,22 +149,19 @@ public class MenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenuItem jFormularioAlumno;
-    private javax.swing.JMenu jInscripciones;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-<<<<<<< Updated upstream
-=======
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenu jfMaterias;
-    private javax.swing.JMenu jlistaAlumXMateria;
->>>>>>> Stashed changes
-    private javax.swing.JMenu jmAlumnos;
-    private javax.swing.JMenu jmNotas;
     // End of variables declaration//GEN-END:variables
 }
