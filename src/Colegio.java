@@ -49,7 +49,7 @@ public class Colegio {
         
         //modificar alumno
      
-          alumno = new Alumno(5,"Cejas","Luciano Maximiliano",fecha,39993664,true);
+//          alumno = new Alumno(5,"Cejas","Luciano Maximiliano",fecha,39993664,true);
 //          if(ad.modificarAlumno(alumno)){
 //              System.out.println("Alumno modificado con exito...");
 //          }else{
@@ -115,7 +115,7 @@ public class Colegio {
         
         //MODIFICAR MATERIA
         
-        materia= new Materia(3,"Fundamentos de programacion ", 3, true);
+//        materia= new Materia(3,"Fundamentos de programacion ", 3, true);
 //        
 //        if(md.modificarMateria(materia)){
 //            System.out.println("Materia modificada con exito.....");
@@ -156,10 +156,10 @@ public class Colegio {
         
         //inscribir alumno
                
-        alumno = ad.obtenerAlumnoXId(16);
-        materia = md.obtenerMateriaXId(31);
-        Inscripcion inscribir = new Inscripcion(alumno, materia, 9);
-        
+//        alumno = ad.obtenerAlumnoXId(16);
+//        materia = md.obtenerMateriaXId(31);
+//        Inscripcion inscribir = new Inscripcion(alumno, materia, 9);
+//        
 //        if(cd.guardarCursada(inscribir)){
 //            System.out.println("La inscripcion se realizo con exito...");
 //        }else{
@@ -202,9 +202,9 @@ public class Colegio {
         
         //MOSTRAR MATERIAS NO INSCRIPTAS DEL ALUMNO X
         
-        for (Materia arg : cd.obtenerMateriasNoCursadas(alumno)) {
-            System.out.println(arg);
-        }
+//        for (Materia arg : cd.obtenerMateriasNoCursadas(alumno)) {
+//            System.out.println(arg);
+//        }
 
     }
 }
