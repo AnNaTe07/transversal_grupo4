@@ -347,26 +347,35 @@ public class AlumnoView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtDniFocusLost
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
-        
-        if(jtidAlumno.getText() != null){
-         long dni=Long.parseLong(jtDni.getText());  
        
-         String nombre=jtNombre.getText();
-         String apellido=jtApellido.getText();
+         int id=-1;
+        try{
+            id=Integer.parseInt(jtidAlumno.getText());
+        }catch(Exception ex){
+        
+             JOptionPane.showMessageDialog(this, "Usted debe ingresar un número");
+             jtidAlumno.requestFocus();
+        }
+        String nombre=jtNombre.getText();
+        String apellido=jtApellido.getText();
+        long dni=Long.parseLong(jtDni.getText());
+      
          SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
          String fecha = formato.format(jdFechan.getDate());
          LocalDate fechaN = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-         Boolean activo= jcActivo.isEnabled();
+         Boolean activo= jcActivo.isSelected();
          Alumno a=new Alumno(apellido, nombre, fechaN, dni, activo);
-         alumno.modificarAlumno(a);  
-         String legajo=jtidAlumno.getText();
-         JOptionPane.showMessageDialog(this, "Modificación realizada con éxito: \nAlumno: "+jtApellido.getText()+" "+jtNombre.getText()+"\nLegajo: "+ legajo+"\nDni: "+dni+"\nFecha de nacimiento: "+fecha);
-         limpiarCampos();
-         jbModificar.setEnabled(false);
-         jbBorrar.setEnabled(false);
-        }
-        
-        
+         if(alumno.modificarAlumno(a)){ 
+             String legajo=jtidAlumno.getText();
+             JOptionPane.showMessageDialog(this, "Modificación realizada con éxito: \nAlumno: "+jtApellido.getText()+" "+jtNombre.getText()+"\nLegajo: "+ legajo+"\nDni: "+dni+"\nFecha de nacimiento: "+fecha);
+             limpiarCampos();
+             jbModificar.setEnabled(false);
+             jbBorrar.setEnabled(false); 
+       
+        }else{
+             JOptionPane.showMessageDialog(this, "Error al intentar modificar la los datos, intentelo nuevamente");
+         }       
+                
     }//GEN-LAST:event_jbModificarActionPerformed
 
 
