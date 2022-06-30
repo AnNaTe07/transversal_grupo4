@@ -199,7 +199,7 @@ public class CursadaData {
     public List<Materia> obtenerMateriasNoCursadas(Alumno alumno) {
         List<Materia> materias = new ArrayList<Materia>();
         try {
-            String sql = "Select * from materia where idMateria not in (select idMateria from cursada where idAlumno =?);";
+            String sql = "Select * from materia where idMateria not in (select idMateria from cursada where idAlumno = ?) AND materia.activo = 1;";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, alumno.getIdAlumno());
             ResultSet resultSet = ps.executeQuery();

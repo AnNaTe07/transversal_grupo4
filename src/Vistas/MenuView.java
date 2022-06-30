@@ -132,7 +132,7 @@ public class MenuView extends javax.swing.JFrame {
     private void jmInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmInscripcionActionPerformed
 
         escritorio.removeAll();                                 
-        InscripcionView iv=new InscripcionView(inscripcion);    
+        InscripcionView iv=new InscripcionView(inscripcion,alumno, materia);    
         iv.setVisible(true);                        
         escritorio.add(iv);                                  
         escritorio.moveToFront(iv);                          
