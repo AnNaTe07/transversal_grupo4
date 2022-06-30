@@ -136,10 +136,30 @@ public class CursadaData {
     }
 
     //Dado un alumno nos devuelva las materias en las que está cursando
-    public List<Inscripcion> cursadasXAlumno(Alumno alumno) {
-        ArrayList<Inscripcion> listaAlumno = new ArrayList();
+//    public List<Materia> cursadasXAlumno(Alumno alumno) {
+//        System.out.println("Alumno:" + alumno.getNombre() + " " + alumno.getApellido());
+//        ArrayList<Materia> materiasCursadasxAlumno = new ArrayList();
+//        try {
+//            String sql = "SELECT * FROM cursada where idAlumno=?";
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ps.setInt(1, alumno.getIdAlumno());
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()) {
+//
+//                Materia m = md.obtenerMateriaXId(rs.getInt("idMateria"));
+//
+//                materiasCursadasxAlumno.add(m);
+//            }
+//            ps.close();
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "No se pudo obtener las inscripciones:" + ex);
+//        }
+//        return materiasCursadasxAlumno;
+//    }
+     public List<Inscripcion> cursadasXAlumno(Alumno alumno) {
+        List<Inscripcion> listaAlumno = new ArrayList();
         try {
-            String sql = "SELECT * FROM cursada where idAlumno=?";
+            String sql = "SELECT * FROM cursada WHERE idAlumno = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, alumno.getIdAlumno());
             ResultSet rs = ps.executeQuery();

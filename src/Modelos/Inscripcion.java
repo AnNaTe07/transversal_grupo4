@@ -59,7 +59,7 @@ public class Inscripcion{
 
     @Override
     public String toString() {
-        return "Cursada " + "id= " + id + "\n" + alumno + "\n" + materia + ", nota= " + nota;
+        return  "id: " + id + "\n" + alumno.getNombre() + "\n" + materia + ", nota= " + nota;
     }
 
 //    @Override
