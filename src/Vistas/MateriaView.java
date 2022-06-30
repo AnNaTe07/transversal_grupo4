@@ -363,7 +363,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
     //   ELIMINAR UNA MATERIA
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
 
-        Integer id = Integer.parseInt(jtBuscaXId.getText());
+        Integer id = Integer.parseInt(jtNumId.getText());
 
         if (materia.borrarMateria(id)) {
             JOptionPane.showMessageDialog(null, "La materia fue eliminada exitosamente.");
