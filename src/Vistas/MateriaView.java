@@ -8,17 +8,22 @@ import javax.swing.JOptionPane;
 
 public class MateriaView extends javax.swing.JInternalFrame {
 
-    private MateriaData materiaData;
-    private Conexion con;
+    private MateriaData materia;
+   // private Conexion con;
 
-    public MateriaView() {
+    public MateriaView(MateriaData materia) {
 
         initComponents();
-        con.getConexion();
-        materiaData = new MateriaData(con);
+        limpiarCampos();  
+        this.materia=materia;
+       // con.getConexion();
+       // materiaData = new MateriaData(con);
         jbEliminar.setEnabled(false);
         jbModificar.setEnabled(false);
 
+    }
+     private void limpiarCampos() {
+       //aca hay que poner los campos a limpiar
     }
 
     @SuppressWarnings("unchecked")
