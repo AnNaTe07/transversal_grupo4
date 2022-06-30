@@ -117,7 +117,7 @@ public class MateriaData {
         Materia materia = null;
 
         try {
-            String sql = "SELECT * FROM materia WHERE nombre LIKE ? AND activo = 1;";
+            String sql = "SELECT * FROM materia WHERE nombre LIKE '?' AND activo = 1;";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, nombre);
             ResultSet resultSet = ps.executeQuery();
@@ -138,6 +138,7 @@ public class MateriaData {
         return materia;
     }
 
+    
     public boolean borrarMateria(int id) {
 
         boolean borrado = false;
