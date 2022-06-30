@@ -82,7 +82,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return idAlumno + " - " + nombre + " " + apellido;
+        return "Alumno" + "\nApellido:" + apellido + "\nnombre:" + nombre + "\ndni:" + dni + "\nactivo:" + activo;
     }
 
 //    @Override
