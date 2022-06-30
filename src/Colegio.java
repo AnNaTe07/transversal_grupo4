@@ -159,10 +159,11 @@ public class Colegio {
 //        }else{
 //            System.out.println("No se pudo realizar la inscripcion...");
 //        }
+/*
         alumno = ad.obtenerAlumnoXId(16);
         materia = md.obtenerMateriaXId(31);
         Inscripcion inscribir = new Inscripcion(alumno, materia, 9);
-        
+        */
 //        cd.guardarCursada(inscribir));
 
         

@@ -48,6 +48,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         jtApellido = new javax.swing.JTextField();
         jtNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jdFechan = new com.toedter.calendar.JDateChooser();
 
         jLabel1.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
         jLabel1.setText("Sección alumnos");
@@ -122,8 +123,11 @@ public class AlumnoView extends javax.swing.JInternalFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGap(90, 90, 90)
                                     .addComponent(jLabel1)))
-                            .addComponent(jLabel5))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(45, 45, 45)
+                                .addComponent(jdFechan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 91, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -158,10 +162,13 @@ public class AlumnoView extends javax.swing.JInternalFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5))
+                    .addComponent(jdFechan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbBorrar)
                     .addComponent(jbModificar)
@@ -183,7 +190,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
        
-         //long dni=Long.parseLong(jtDni.getText());                               
+         long dni=Long.parseLong(jtDni.getText());                               
          String nombre=jtNombre.getText();
          String apellido=jtApellido.getText();
          Date fecha = (Date) jdFechan.getDate();
@@ -199,7 +206,8 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             long dni=Integer.parseInt(jtDni.getText());
         }catch (NumberFormatException ex){
             JOptionPane.showMessageDialog(this,"Debe ingresar un número");
-        }jtDni.requestFocus();
+            jtDni.requestFocus();
+        }
         
     }//GEN-LAST:event_jtDniFocusLost
 
@@ -214,6 +222,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbModificar;
+    private com.toedter.calendar.JDateChooser jdFechan;
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtDni;
     private javax.swing.JTextField jtNombre;
