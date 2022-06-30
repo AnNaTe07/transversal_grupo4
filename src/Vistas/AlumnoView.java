@@ -6,8 +6,10 @@ import Data.Conexion;
 import Data.MateriaData;
 import Modelos.Alumno;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
 
@@ -130,11 +132,6 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         jLabel6.setText("Legajo");
 
         jtidAlumno.setText("jTextField1");
-        jtidAlumno.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtidAlumnoFocusLost(evt);
-            }
-        });
 
         jcActivo.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
         jcActivo.setText("Activo");
@@ -315,15 +312,22 @@ public class AlumnoView extends javax.swing.JInternalFrame {
      
          String nombre=jtNombre.getText();
          String apellido=jtApellido.getText();
-         Date fecha = (Date) jdFechan.getDate();
-         LocalDate fechaN =fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+         
+         
+         //Obtenemos la fecja del jcalendar y la pasamos a LocalDate            
+     
+         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+         String fecha = formato.format(jdFechan.getDate());
+         LocalDate fechaN = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
          Boolean activo= jcActivo.isEnabled();
          Alumno a=new Alumno(apellido, nombre, fechaN, dni, activo);
          jtidAlumno.setText(a.getIdAlumno()+"");
          int legajo=Integer.parseInt(jtidAlumno.getText());
-            if( alumno.agregarAlumno(a)){               
-         JOptionPane.showMessageDialog(this,"Alumno "+a.getApellido()+" "+a.getNombre()+" \ndni "+a.getDni()+" \nLegajo:"+legajo+"\n agregado con éxito");
-          limpiarCampos();
+            if( alumno.agregarAlumno(a)){    
+                jtidAlumno.setText(a.getIdAlumno()+"");
+                JOptionPane.showMessageDialog(this,"Alumno "+a.getApellido()+" "+a.getNombre()+" \ndni "+a.getDni()+" \nLegajo:"+legajo+"\n agregado con éxito");
+                limpiarCampos();
      }else{
          JOptionPane.showMessageDialog(this,"El alumno ya se encuentra en la base de datos");
      }
@@ -349,12 +353,14 @@ public class AlumnoView extends javax.swing.JInternalFrame {
        
          String nombre=jtNombre.getText();
          String apellido=jtApellido.getText();
-         Date fecha = (Date) jdFechan.getDate();//tira error
-         LocalDate fechaN =fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+         String fecha = formato.format(jdFechan.getDate());
+         LocalDate fechaN = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
          Boolean activo= jcActivo.isEnabled();
          Alumno a=new Alumno(apellido, nombre, fechaN, dni, activo);
-         alumno.modificarAlumno(a);         
-         JOptionPane.showMessageDialog(this, "Modificación realizada con éxito: \nAlumno: "+apellido+" "+nombre+"\nLegajo: "+jtidAlumno+"\nDni: "+dni+"Fecha de nacimiento: "+fecha);
+         alumno.modificarAlumno(a);  
+         String legajo=jtidAlumno.getText();
+         JOptionPane.showMessageDialog(this, "Modificación realizada con éxito: \nAlumno: "+jtApellido.getText()+" "+jtNombre.getText()+"\nLegajo: "+ legajo+"\nDni: "+dni+"\nFecha de nacimiento: "+fecha);
          limpiarCampos();
          jbModificar.setEnabled(false);
          jbBorrar.setEnabled(false);
@@ -362,17 +368,6 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         
         
     }//GEN-LAST:event_jbModificarActionPerformed
-
-    private void jtidAlumnoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtidAlumnoFocusLost
-      
-         try{
-            long id=Integer.parseInt(jtidAlumno.getText());
-        }catch (NumberFormatException ex){
-            JOptionPane.showMessageDialog(this,"Debe ingresar un número");
-            jtidAlumno.requestFocus();
-        }
-        
-    }//GEN-LAST:event_jtidAlumnoFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

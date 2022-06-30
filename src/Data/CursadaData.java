@@ -162,13 +162,8 @@ public class CursadaData {
         return listaAlumno;
     }
 
-    //Dado un alumno nos devuelva las materias en las que NO está inscripto
-    /*
-    public List<Cursada> noInscripto(Alumno alumno){     
-      
-      
-    } 
-     */
+  
+  
     //Dada una materia nos devuelva los alumnos inscriptos en ella.
     public List<Inscripcion> cursadaXMateria(Materia materia) {
         ArrayList<Inscripcion> listaMaterias = new ArrayList();
@@ -195,6 +190,8 @@ public class CursadaData {
         }
         return listaMaterias;
     }
+    
+      //Dado un alumno nos devuelva las materias en las que NO está inscripto
 
     public List<Materia> obtenerMateriasNoCursadas(Alumno alumno) {
         List<Materia> materias = new ArrayList<Materia>();

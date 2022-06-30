@@ -255,9 +255,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
-      <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtidAlumnoFocusLost"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jcActivo">
       <Properties>
