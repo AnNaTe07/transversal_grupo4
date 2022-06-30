@@ -118,7 +118,7 @@ public class Colegio {
 //        }else{
 //            System.out.println("No se pudo modificar la materia...");
 //        }
-        materia= new Materia(3,"Fundamentos de programacion ", 3, true);
+       // materia= new Materia(3,"Fundamentos de programacion ", 3, true);
         
         //md.modificarMateria(materia);
 

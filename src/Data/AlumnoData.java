@@ -98,7 +98,7 @@ public class AlumnoData {
         Alumno alumno = null;
 
         try {
-            String sql = "SELECT * FROM alumno WHERE idAlumno = ? AND activo = 1;";
+            String sql = "SELECT * FROM alumno WHERE idAlumno = ?";// AND activo = 1;"; desactivado para buscar alumno inactivo y poder modificarlo
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
