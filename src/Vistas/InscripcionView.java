@@ -87,6 +87,10 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         cbAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbAlumnosActionPerformed(evt);

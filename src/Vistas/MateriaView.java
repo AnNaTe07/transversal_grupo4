@@ -52,6 +52,8 @@ public class MateriaView extends javax.swing.JInternalFrame {
         jbBuscaMateriaXNombre = new javax.swing.JButton();
 
         setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jlNombMat.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
         jlNombMat.setText("Nombre de Materia");
