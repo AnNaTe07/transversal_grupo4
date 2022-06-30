@@ -36,7 +36,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         jtNombre.setText("");
         jtApellido.setText("");
         jcActivo.setText("");
-       // jdFechan.setCalendar();
+        //jdFechan.setCalendar();
     }
 
     
@@ -253,13 +253,13 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             jtNombre.setText(aux.getNombre());
             jdFechan.setDate(Date.valueOf(aux.getFechNac()));
             if(aux.isActivo()){
-           jcActivo.setSelected(aux.isActivo());
-           jbModificar.setEnabled(true);
-           jbBorrar.setEnabled(true);
+            jcActivo.setSelected(aux.isActivo());
+            jbModificar.setEnabled(true);
+            jbBorrar.setEnabled(true);
         }else{
-                JOptionPane.showMessageDialog(this,"El alumno se encuentra inactivo en la base de datos");
-                 jbModificar.setEnabled(true);
-                 jbBorrar.setEnabled(true);
+            JOptionPane.showMessageDialog(this,"El alumno se encuentra inactivo en la base de datos");
+            jbModificar.setEnabled(true);
+            jbBorrar.setEnabled(true);
             }
         }else{
             JOptionPane.showMessageDialog(this,"El numero de legajo no se encuentra registrado en la base de datos");
@@ -348,12 +348,12 @@ public class AlumnoView extends javax.swing.JInternalFrame {
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
        
-         int id=-1;
+         int id;
         try{
             id=Integer.parseInt(jtidAlumno.getText());
         }catch(Exception ex){
         
-             JOptionPane.showMessageDialog(this, "Usted debe ingresar un número");
+             JOptionPane.showMessageDialog(this, "El campo legajo es un número");
              jtidAlumno.requestFocus();
         }
         String nombre=jtNombre.getText();
@@ -363,7 +363,8 @@ public class AlumnoView extends javax.swing.JInternalFrame {
          SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
          String fecha = formato.format(jdFechan.getDate());
          LocalDate fechaN = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-         Boolean activo= jcActivo.isSelected();
+         
+        Boolean activo = jcActivo.isEnabled();
          Alumno a=new Alumno(apellido, nombre, fechaN, dni, activo);
          if(alumno.modificarAlumno(a)){ 
              String legajo=jtidAlumno.getText();
