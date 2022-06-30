@@ -51,9 +51,16 @@ public class MenuView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        escritorio.setLayout(null);
+
         jMenu2.setText("Archivo");
 
         jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem1);
 
         jMenuBar1.add(jMenu2);
@@ -164,6 +171,15 @@ public class MenuView extends javax.swing.JFrame {
     private void jmIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmIActionPerformed
        
     }//GEN-LAST:event_jmIActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        
+        System.exit(0);
+
+        
+
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
   
     public static void main(String args[]) {
