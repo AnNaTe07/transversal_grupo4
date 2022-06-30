@@ -348,25 +348,25 @@ public class AlumnoView extends javax.swing.JInternalFrame {
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
        
-         int id;
+        int id=0;
         try{
             id=Integer.parseInt(jtidAlumno.getText());
         }catch(Exception ex){
         
-             JOptionPane.showMessageDialog(this, "El campo legajo es un número");
+             JOptionPane.showMessageDialog(this, "El campo legajo debe ser numérico");
              jtidAlumno.requestFocus();
         }
         String nombre=jtNombre.getText();
         String apellido=jtApellido.getText();
         long dni=Long.parseLong(jtDni.getText());
       
-         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-         String fecha = formato.format(jdFechan.getDate());
-         LocalDate fechaN = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        String fecha = formato.format(jdFechan.getDate());
+        LocalDate fechaN = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
          
-        Boolean activo = jcActivo.isEnabled();
-         Alumno a=new Alumno(apellido, nombre, fechaN, dni, activo);
-         if(alumno.modificarAlumno(a)){ 
+        Boolean activo = jcActivo.isSelected();
+        Alumno a=new Alumno(id,apellido, nombre, fechaN, dni, activo);
+        if(alumno.modificarAlumno(a)){ 
              String legajo=jtidAlumno.getText();
              JOptionPane.showMessageDialog(this, "Modificación realizada con éxito: \nAlumno: "+jtApellido.getText()+" "+jtNombre.getText()+"\nLegajo: "+ legajo+"\nDni: "+dni+"\nFecha de nacimiento: "+fecha);
              limpiarCampos();
