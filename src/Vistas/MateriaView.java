@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 public class MateriaView extends javax.swing.JInternalFrame {
 
     private MateriaData materia;
-   // private Conexion con;
 
     public MateriaView(MateriaData materia) {
 
