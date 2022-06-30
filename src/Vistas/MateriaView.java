@@ -252,7 +252,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "La materia " + matTxt + " se modifico correctamente");
 
             } else {
-                JOptionPane.showMessageDialog(null, "Ocurrio un error al intentar modificar la materia.");
+                JOptionPane.showMessageDialog(null, "Ocurrio un error al intentar modificar la materia, vuelva a intentar.");
                               
             }
         } else {
