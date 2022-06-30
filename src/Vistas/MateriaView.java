@@ -239,7 +239,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             Boolean activo = jcAct.isEnabled();
             int id = Integer.parseInt(jtNumId.getText());
             Materia mate = new Materia(id, matTxt, anio, activo);
-            materiaData.modificarMateria(mate);
+            materia.modificarMateria(mate);
         } else {
 
             JOptionPane.showMessageDialog(null, "Primero debera ingresar un ID y buscar el alumno.");
@@ -255,11 +255,11 @@ public class MateriaView extends javax.swing.JInternalFrame {
     private void jbAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAniadirActionPerformed
 
         String matTxt = jtMateria.getText();
-        int anio = (int) jcAnio.getSelectedItem();
+        Integer anio = Integer.parseInt((String) jcAnio.getSelectedItem());
         Boolean activo = jcAct.isEnabled();
 
         Materia mate = new Materia(matTxt, anio, activo);
-        if (materiaData.agregarMateria(mate)) {
+        if (materia.agregarMateria(mate)) {
             JOptionPane.showMessageDialog(null, "La materia " + mate.getNombre() + " fue agregada exitosamente con el ID: " + mate.getIdMateria());
 
             //limpia campos
@@ -267,6 +267,8 @@ public class MateriaView extends javax.swing.JInternalFrame {
             jcAnio.setSelectedIndex(0);
             jtNumId.setText("");
             jcAct.setEnabled(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "ERROR");
         }
 
     }//GEN-LAST:event_jbAniadirActionPerformed
@@ -278,9 +280,9 @@ public class MateriaView extends javax.swing.JInternalFrame {
     //   ELIMINAR UNA MATERIA
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
 
-        int id = Integer.parseInt(jtBuscaXId.getText());
+        Integer id = Integer.parseInt(jtBuscaXId.getText());
 
-        if (materiaData.borrarMateria(id)) {
+        if (materia.borrarMateria(id)) {
             JOptionPane.showMessageDialog(null, "La materia fue eliminada exitosamente.");
         }
         //limpia campos
@@ -307,7 +309,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
         if (jcBuscaOk.isSelected() && jtBuscaXId.getText() != null) {
 
             int id = Integer.parseInt(jtBuscaXId.getText());
-            Materia mm = materiaData.obtenerMateriaXId(id);
+            Materia mm = materia.obtenerMateriaXId(id);
 
             jtMateria.setText(mm.getNombre());
             jcAnio.setSelectedItem(mm.getAnio());
