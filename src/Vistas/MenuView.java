@@ -1,6 +1,4 @@
-
 package Vistas;
-
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,23 +8,21 @@ import Data.MateriaData;
 import Data.CursadaData;
 
 public class MenuView extends javax.swing.JFrame {
-    
+
     private Conexion conexion;
     private AlumnoData alumno;
     private MateriaData materia;
     private CursadaData inscripcion;
 
-
-   public MenuView() {
+    public MenuView() {
         initComponents();
         this.setLocationRelativeTo(null);
-        conexion= new Conexion();
-        alumno= new AlumnoData(conexion);
-        materia= new MateriaData(conexion);
-        inscripcion= new CursadaData(conexion);
+        conexion = new Conexion();
+        alumno = new AlumnoData(conexion);
+        materia = new MateriaData(conexion);
+        inscripcion = new CursadaData(conexion);
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,13 +41,11 @@ public class MenuView extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jmConsultas = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        escritorio.setLayout(null);
 
         jMenu2.setText("Archivo");
 
@@ -115,8 +109,13 @@ public class MenuView extends javax.swing.JFrame {
 
         jMenu7.setText("Consultas");
 
-        jMenuItem6.setText("Listado de alumnos x materia");
-        jMenu7.add(jMenuItem6);
+        jmConsultas.setText("Listado de alumnos x materia");
+        jmConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmConsultasActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jmConsultas);
 
         jMenuBar1.add(jMenu7);
 
@@ -126,11 +125,11 @@ public class MenuView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
 
         pack();
@@ -138,50 +137,55 @@ public class MenuView extends javax.swing.JFrame {
 
     private void jmInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmInscripcionActionPerformed
 
-        escritorio.removeAll();                                 
-        InscripcionView iv=new InscripcionView(inscripcion,alumno, materia);    
-        iv.setVisible(true);                        
-        escritorio.add(iv);                                  
-        escritorio.moveToFront(iv);                          
+        escritorio.removeAll();
+        InscripcionView iv = new InscripcionView(inscripcion, alumno, materia);
+        iv.setVisible(true);
+        escritorio.add(iv);
+        escritorio.moveToFront(iv);
         escritorio.repaint();
     }//GEN-LAST:event_jmInscripcionActionPerformed
 
     private void jmMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmMateriaActionPerformed
-        
-        
+
         escritorio.removeAll();
         escritorio.repaint();
         MateriaView vistaMat = new MateriaView(materia);
         vistaMat.setVisible(true);
         escritorio.add(vistaMat);
         escritorio.moveToFront(vistaMat);
-        
+
     }//GEN-LAST:event_jmMateriaActionPerformed
 
     private void jmAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmAlumnoActionPerformed
-      
-        escritorio.removeAll();                                 
-        AlumnoView av=new AlumnoView(alumno);    
-        av.setVisible(true);                        
-        escritorio.add(av);                                  
-        escritorio.moveToFront(av);                          
-        escritorio.repaint(); 
+
+        escritorio.removeAll();
+        AlumnoView av = new AlumnoView(alumno);
+        av.setVisible(true);
+        escritorio.add(av);
+        escritorio.moveToFront(av);
+        escritorio.repaint();
     }//GEN-LAST:event_jmAlumnoActionPerformed
 
     private void jmIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmIActionPerformed
-       
+
     }//GEN-LAST:event_jmIActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        
-        System.exit(0);
 
-        
+        System.exit(0);
 
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-  
+    private void jmConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmConsultasActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        ConsultasView cv = new ConsultasView(inscripcion, alumno, materia);
+        cv.setVisible(true);
+        escritorio.add(cv);
+        escritorio.moveToFront(cv);
+    }//GEN-LAST:event_jmConsultasActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -224,8 +228,8 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jmAlumno;
+    private javax.swing.JMenuItem jmConsultas;
     private javax.swing.JMenu jmFMateria;
     private javax.swing.JMenu jmI;
     private javax.swing.JMenuItem jmInscripcion;

@@ -93,10 +93,13 @@
             <Property name="text" type="java.lang.String" value="Consultas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="jmConsultas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listado de alumnos x materia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmConsultasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -126,12 +129,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="escritorio" alignment="0" max="32767" attributes="0"/>
+          <Component id="escritorio" alignment="0" pref="632" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="escritorio" alignment="0" pref="233" max="32767" attributes="0"/>
+          <Component id="escritorio" alignment="0" pref="433" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
