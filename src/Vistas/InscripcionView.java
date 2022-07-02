@@ -31,6 +31,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         armarTabla();
         limpiarTabla();
         Binscribir.setEnabled(false);
+        jbQuitar.setEnabled(false);
     }
     
     private void llenarComboBox(){
@@ -73,6 +74,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         TlistaMaterias = new javax.swing.JTable();
         rbInscriptas = new javax.swing.JRadioButton();
+        jbQuitar = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,7 +138,6 @@ public class InscripcionView extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TlistaMaterias.setColumnSelectionAllowed(true);
         TlistaMaterias.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(TlistaMaterias);
 
@@ -144,6 +145,13 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         rbInscriptas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbInscriptasActionPerformed(evt);
+            }
+        });
+
+        jbQuitar.setText("Quitar Inscripcion");
+        jbQuitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbQuitarActionPerformed(evt);
             }
         });
 
@@ -179,8 +187,10 @@ public class InscripcionView extends javax.swing.JInternalFrame {
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(309, 309, 309)
-                        .addComponent(Binscribir)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Binscribir)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbQuitar)))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +209,9 @@ public class InscripcionView extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Binscribir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Binscribir)
+                    .addComponent(jbQuitar))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -208,6 +220,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
 
     private void rbNoInscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNoInscriptasActionPerformed
         limpiarTabla();
+        jbQuitar.setEnabled(false);
         Binscribir.setEnabled(true);
         rbNoInscriptas.setSelected(true);
         rbInscriptas.setSelected(false);
@@ -225,11 +238,11 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         Alumno alumno = (Alumno) cbAlumnos.getSelectedItem();
         Inscripcion inscripcion = new Inscripcion(alumno, md.obtenerMateriaXId(idMateria), 0);
         if(cursada.guardarCursada(inscripcion)){
-            JOptionPane.showMessageDialog(this, "Guardado con exito");
+            JOptionPane.showMessageDialog(this, "Inscripto con exito");
             int x = TlistaMaterias.getSelectedRow();
             modelo.removeRow(x);
         }else{
-            JOptionPane.showMessageDialog(this, "ERROR");
+            JOptionPane.showMessageDialog(this, "Error al inscribir el alumno");
         }
         
         
@@ -237,6 +250,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
 
     private void rbInscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbInscriptasActionPerformed
         Binscribir.setEnabled(false);
+        jbQuitar.setEnabled(true);
         limpiarTabla();
         rbInscriptas.setSelected(true);
         rbNoInscriptas.setSelected(false);
@@ -265,6 +279,20 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_cbAlumnosActionPerformed
 
+    private void jbQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitarActionPerformed
+
+        Integer idMateria = (Integer) TlistaMaterias.getValueAt(TlistaMaterias.getSelectedRow(), 0);
+         Alumno alumno = (Alumno) cbAlumnos.getSelectedItem();
+         Materia materia = md.obtenerMateriaXId(idMateria);
+         if(cursada.borrarCursada(alumno, materia)){
+             JOptionPane.showMessageDialog(this, "Inscripcion eliminada");
+             rbInscriptasActionPerformed(evt);
+         }else{
+             JOptionPane.showMessageDialog(this, "Error al eliminar la inscripcion");
+         }
+        
+    }//GEN-LAST:event_jbQuitarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Binscribir;
@@ -276,6 +304,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jbQuitar;
     private javax.swing.JRadioButton rbInscriptas;
     private javax.swing.JRadioButton rbNoInscriptas;
     // End of variables declaration//GEN-END:variables
