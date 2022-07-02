@@ -52,6 +52,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
         jbBuscaMateriaXNombre = new javax.swing.JButton();
 
         setClosable(true);
+        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
 
@@ -128,6 +129,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
+        jcAct.setFont(new java.awt.Font("NSimSun", 0, 12)); // NOI18N
         jcAct.setSelected(true);
         jcAct.setText("Activa");
         jcAct.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +138,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
+        jbClean.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
         jbClean.setText("Limpiar campos");
         jbClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,10 +164,6 @@ public class MateriaView extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(163, 163, 163))
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,11 +174,11 @@ public class MateriaView extends javax.swing.JInternalFrame {
                                 .addGap(3, 3, 3)
                                 .addComponent(jlBuscMat))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
+                                .addGap(83, 83, 83)
                                 .addComponent(jbAniadir)
-                                .addGap(75, 75, 75)
+                                .addGap(53, 53, 53)
                                 .addComponent(jbModificar)
-                                .addGap(48, 48, 48)
+                                .addGap(59, 59, 59)
                                 .addComponent(jbEliminar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(142, 142, 142)
@@ -215,6 +214,10 @@ public class MateriaView extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jcAct)))))
                 .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +259,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jtBuscaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLXnombre)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbAniadir)
                     .addComponent(jbModificar)
