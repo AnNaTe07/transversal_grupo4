@@ -2,15 +2,11 @@
 package Vistas;
 
 import Data.AlumnoData;
-import Data.Conexion;
-import Data.MateriaData;
 import Modelos.Alumno;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
 import javax.swing.JOptionPane;
 
 public class AlumnoView extends javax.swing.JInternalFrame {

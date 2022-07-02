@@ -170,7 +170,7 @@ public class NotasView extends javax.swing.JInternalFrame {
             int idMateria = (int) TlistaMaterias.getValueAt(TlistaMaterias.getSelectedRow(), 0);
             Materia materia = md.obtenerMateriaXId(idMateria);
             
-            Double notaNueva = Double.parseDouble((String) TlistaMaterias.getValueAt(TlistaMaterias.getSelectedRow(), 3));
+            Double notaNueva = Double.parseDouble( TlistaMaterias.getValueAt(TlistaMaterias.getSelectedRow() , 3).toString());
             if(notaNueva > 0.0 && notaNueva <= 10.0){
                 cursada.modificarNota(alumno, materia, notaNueva);
                 JOptionPane.showMessageDialog(this, "Nota modificada con exito");
