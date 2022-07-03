@@ -324,7 +324,8 @@ public class AlumnoView extends javax.swing.JInternalFrame {
          int legajo=Integer.parseInt(jtidAlumno.getText());
             if( alumno.agregarAlumno(a)){    
                 jtidAlumno.setText(a.getIdAlumno()+"");
-                JOptionPane.showMessageDialog(this,"Alumno "+a.getApellido()+" "+a.getNombre()+" \ndni "+a.getDni()+" \nLegajo:"+legajo+"\n agregado con éxito");
+                legajo=Integer.parseInt(jtidAlumno.getText());
+                JOptionPane.showMessageDialog(this,"Alumno "+a.getApellido()+" "+a.getNombre()+" \nDni "+a.getDni()+" \nLegajo:"+legajo+"\nAgregado con éxito!");
                 limpiarCampos();
      }else{
          JOptionPane.showMessageDialog(this,"El alumno ya se encuentra en la base de datos");

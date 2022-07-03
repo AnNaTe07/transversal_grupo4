@@ -1,6 +1,4 @@
-/*
-    AlumnoData
- */
+
 package Data;
 
 import Modelos.Alumno;
@@ -41,7 +39,7 @@ public class AlumnoData {
 
             ResultSet rs = ps.getGeneratedKeys();
 
-            JOptionPane.showMessageDialog(null, " Se agregó al alumno " + alumno + " correctamente");
+          //  JOptionPane.showMessageDialog(null, " Se agregó al alumno " + alumno + " correctamente");
             if (rs.next()) {
                 alumno.setIdAlumno(rs.getInt(1));
             } else {
