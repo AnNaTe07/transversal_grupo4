@@ -37,9 +37,7 @@ public class AlumnoData {
 
             ps.executeUpdate();
 
-            ResultSet rs = ps.getGeneratedKeys();
-
-          //  JOptionPane.showMessageDialog(null, " Se agregó al alumno " + alumno + " correctamente");
+            ResultSet rs = ps.getGeneratedKeys();         
             if (rs.next()) {
                 alumno.setIdAlumno(rs.getInt(1));
             } else {
@@ -51,7 +49,7 @@ public class AlumnoData {
         } catch (SQLException ex) {
             insert = false;
             if (ex instanceof java.sql.SQLIntegrityConstraintViolationException) {
-                JOptionPane.showMessageDialog(null, "Ya existe un alumno con ese dni ");
+                JOptionPane.showMessageDialog(null, "Ya existe un alumno registrado con ese número de dni");
             } else {
 
                 JOptionPane.showMessageDialog(null, "Error de sintaxis " + ex);
