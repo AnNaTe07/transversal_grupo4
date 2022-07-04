@@ -247,7 +247,7 @@
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f1" green="f1" red="f2" type="rgb"/>
+          <Color blue="e9" green="e9" red="eb" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gurmukhi MT" size="18" style="0"/>

@@ -102,7 +102,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
         });
 
         jtNumId.setEditable(false);
-        jtNumId.setBackground(new java.awt.Color(242, 241, 241));
+        jtNumId.setBackground(new java.awt.Color(235, 233, 233));
         jtNumId.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
 
         jbBuscaMateria.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
