@@ -14,8 +14,6 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
         initComponents();
         this.materia=materia;
-       // con.getConexion();
-       // materiaData = new MateriaData(con);
         jbEliminar.setEnabled(false);
         jbModificar.setEnabled(false);
         jtBuscaXId.setEnabled(false);
@@ -30,6 +28,9 @@ public class MateriaView extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jFrame1 = new javax.swing.JFrame();
+        jFrame2 = new javax.swing.JFrame();
+        checkbox1 = new java.awt.Checkbox();
         jlNombMat = new javax.swing.JLabel();
         jlNumId = new javax.swing.JLabel();
         jlAnio = new javax.swing.JLabel();
@@ -50,22 +51,50 @@ public class MateriaView extends javax.swing.JInternalFrame {
         jLXid = new javax.swing.JLabel();
         jLXnombre = new javax.swing.JLabel();
         jbBuscaMateriaXNombre = new javax.swing.JButton();
+        canvas1 = new java.awt.Canvas();
 
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
+        jFrame2.getContentPane().setLayout(jFrame2Layout);
+        jFrame2Layout.setHorizontalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame2Layout.setVerticalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        checkbox1.setLabel("checkbox1");
+
+        setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Formulario de Materias");
 
-        jlNombMat.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jlNombMat.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jlNombMat.setText("Nombre de Materia");
 
-        jlNumId.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jlNumId.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jlNumId.setText("Numero de ID");
 
-        jlAnio.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jlAnio.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jlAnio.setText("Año Academico");
 
-        jtMateria.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtMateria.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
+        jtMateria.setHighlighter(null);
         jtMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtMateriaActionPerformed(evt);
@@ -73,10 +102,10 @@ public class MateriaView extends javax.swing.JInternalFrame {
         });
 
         jtNumId.setEditable(false);
-        jtNumId.setBackground(new java.awt.Color(243, 235, 235));
-        jtNumId.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtNumId.setBackground(new java.awt.Color(242, 241, 241));
+        jtNumId.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
 
-        jbBuscaMateria.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jbBuscaMateria.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jbBuscaMateria.setText("Buscar");
         jbBuscaMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +113,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbAniadir.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jbAniadir.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jbAniadir.setText("Añadir");
         jbAniadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,7 +121,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbModificar.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jbModificar.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jbModificar.setText("Modificar");
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +129,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbEliminar.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jbEliminar.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jbEliminar.setText("Eliminar");
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,9 +137,10 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
-        jLabel4.setText("Formulario de Materias");
+        jLabel4.setFont(new java.awt.Font("Bangla Sangam MN", 0, 24)); // NOI18N
+        jLabel4.setText("FORMULARIO DE MATERIA");
 
+        jcAnio.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jcAnio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
         jcAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,18 +148,19 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jlBuscMat.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jlBuscMat.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jlBuscMat.setText("Buscar Materia");
 
-        jtBuscaXId.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtBuscaXId.setFont(new java.awt.Font("Gurmukhi MT", 0, 16)); // NOI18N
 
+        jcBuscaOk.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jcBuscaOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcBuscaOkActionPerformed(evt);
             }
         });
 
-        jcAct.setFont(new java.awt.Font("NSimSun", 0, 12)); // NOI18N
+        jcAct.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jcAct.setSelected(true);
         jcAct.setText("Activa");
         jcAct.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +169,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbClean.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
+        jbClean.setFont(new java.awt.Font("Gurmukhi MT", 0, 14)); // NOI18N
         jbClean.setText("Limpiar campos");
         jbClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,13 +177,15 @@ public class MateriaView extends javax.swing.JInternalFrame {
             }
         });
 
-        jtBuscaXNombre.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jtBuscaXNombre.setFont(new java.awt.Font("Gurmukhi MT", 0, 16)); // NOI18N
 
+        jLXid.setFont(new java.awt.Font("Gurmukhi MT", 0, 16)); // NOI18N
         jLXid.setText("ID");
 
+        jLXnombre.setFont(new java.awt.Font("Gurmukhi MT", 0, 16)); // NOI18N
         jLXnombre.setText("Nombre");
 
-        jbBuscaMateriaXNombre.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jbBuscaMateriaXNombre.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jbBuscaMateriaXNombre.setText("Buscar");
         jbBuscaMateriaXNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,104 +199,103 @@ public class MateriaView extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jcBuscaOk)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jlBuscMat))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(jbAniadir)
-                                .addGap(53, 53, 53)
-                                .addComponent(jbModificar)
-                                .addGap(59, 59, 59)
-                                .addComponent(jbEliminar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(142, 142, 142)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLXnombre)
-                                    .addComponent(jLXid))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jtBuscaXId, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                    .addComponent(jtBuscaXNombre))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jbBuscaMateriaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jbBuscaMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlNumId)
-                        .addGap(35, 35, 35)
-                        .addComponent(jtNumId, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbClean, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlNombMat)
-                            .addComponent(jlAnio))
-                        .addGap(18, 18, 18)
+                            .addComponent(jlAnio)
+                            .addComponent(jlNumId))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jcAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcAct)))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jtNumId, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                                        .addComponent(jtMateria)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcAct)
+                                    .addComponent(jbClean, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLXnombre)
+                                    .addComponent(jLXid)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jbAniadir)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jcBuscaOk)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jlBuscMat))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtBuscaXId, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                    .addComponent(jtBuscaXNombre)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jbModificar)))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbBuscaMateriaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbBuscaMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jbEliminar)))))
+                .addContainerGap(71, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(184, 184, 184))
+                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel4)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlNombMat)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcAct, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcAct, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlNombMat))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlAnio)
                     .addComponent(jcAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlNumId)
-                    .addComponent(jtNumId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbClean))
+                    .addComponent(jbClean, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtNumId, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jcBuscaOk, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jcBuscaOk)
+                            .addComponent(jlBuscMat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jlBuscMat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtBuscaXId, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLXid)
-                            .addComponent(jbBuscaMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbBuscaMateriaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jtBuscaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLXnombre)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                            .addComponent(jbBuscaMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtBuscaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLXnombre)
+                            .addComponent(jbBuscaMateriaXNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbAniadir)
-                    .addComponent(jbModificar)
-                    .addComponent(jbEliminar))
+                    .addComponent(jbAniadir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -280,7 +312,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jtMateriaActionPerformed
 
-    //   MODIFICAR UNA MATERIA
+//   MODIFICAR UNA MATERIA    
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
 
         if (jtNumId.getText() != "" && !"".equals(jtMateria.getText())) {
@@ -311,6 +343,8 @@ public class MateriaView extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jbModificarActionPerformed
 
+    
+// HABILITA Y DESHABILITA LA BUSQUEDA
     private void jcBuscaOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcBuscaOkActionPerformed
 
         if (jcBuscaOk.isSelected()) { // DESHABILITA EL BOTON AÑADIR Y HABILITA MODDIFICAR O ELIMINAR
@@ -337,11 +371,10 @@ public class MateriaView extends javax.swing.JInternalFrame {
             jtBuscaXNombre.setText("");
         }
             
-
-        
     }//GEN-LAST:event_jcBuscaOkActionPerformed
 
-    // AÑADIR UNA MATERIA
+    
+// AÑADIR UNA MATERIA
     private void jbAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAniadirActionPerformed
 
         String matTxt = jtMateria.getText();
@@ -367,17 +400,24 @@ public class MateriaView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcActActionPerformed
 
-    //   ELIMINAR UNA MATERIA
+    
+//   ELIMINAR UNA MATERIA
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
 
         Integer id = Integer.parseInt(jtNumId.getText());
+        if (jtNumId.getText() != "" && !"".equals(jtMateria.getText())) {
+            if (materia.borrarMateria(id)) {
+                JOptionPane.showMessageDialog(null, "La materia fue eliminada exitosamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "La materia no pudo ser eliminada.");
 
-        if (materia.borrarMateria(id)) {
-            JOptionPane.showMessageDialog(null, "La materia fue eliminada exitosamente.");
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "La materia no pudo ser eliminada.");
 
-        }
+            JOptionPane.showMessageDialog(null, "Complete los campos.");
+
+        }    
+            
         //limpia campos
         jtMateria.setText("");
         jcAnio.setSelectedIndex(0);
@@ -385,7 +425,8 @@ public class MateriaView extends javax.swing.JInternalFrame {
         jcAct.setSelected(true);
     }//GEN-LAST:event_jbEliminarActionPerformed
 
-    // OBTENER MATERIA POR ID
+    
+// OBTENER MATERIA POR ID
     private void jbBuscaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscaMateriaActionPerformed
         jtMateria.setText("");
         jcAnio.setSelectedIndex(0);
@@ -417,7 +458,9 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_jbBuscaMateriaActionPerformed
-        // LIMPIA TODOS LOS CAMPOS
+       
+    
+// LIMPIA TODOS LOS CAMPOS
     private void jbCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCleanActionPerformed
 
         //limpia campos
@@ -438,7 +481,8 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jbCleanActionPerformed
 
-    // BUSCA MATERIA POR NOMBRE
+    
+// BUSCA MATERIA POR NOMBRE
     private void jbBuscaMateriaXNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscaMateriaXNombreActionPerformed
 
 
@@ -479,6 +523,10 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private java.awt.Canvas canvas1;
+    private java.awt.Checkbox checkbox1;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLXid;
     private javax.swing.JLabel jLXnombre;
     private javax.swing.JLabel jLabel4;

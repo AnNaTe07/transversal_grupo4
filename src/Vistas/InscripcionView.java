@@ -89,27 +89,30 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Inscripciones");
 
+        cbAlumnos.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
         cbAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbAlumnosActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
-        jLabel1.setText("Formulario de inscripciones");
+        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 1, 24)); // NOI18N
+        jLabel1.setText("FORMULARIO DE INSCRIPCION");
 
-        jLabel2.setFont(new java.awt.Font("NSimSun", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
         jLabel2.setText("Alumno:");
 
-        jLabel3.setFont(new java.awt.Font("NSimSun", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
         jLabel3.setText("Listado de materias");
 
-        rbNoInscriptas.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
+        rbNoInscriptas.setFont(new java.awt.Font("Gurmukhi MT", 1, 14)); // NOI18N
         rbNoInscriptas.setText("No inscriptas");
         rbNoInscriptas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +120,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
             }
         });
 
-        Binscribir.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        Binscribir.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         Binscribir.setText("Inscribir");
         Binscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +133,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
                 return false;
             }
         };
+        TlistaMaterias.setFont(new java.awt.Font("Gurmukhi MT", 0, 12)); // NOI18N
         TlistaMaterias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -144,7 +148,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         TlistaMaterias.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(TlistaMaterias);
 
-        rbInscriptas.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
+        rbInscriptas.setFont(new java.awt.Font("Gurmukhi MT", 1, 14)); // NOI18N
         rbInscriptas.setText("Inscriptas");
         rbInscriptas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +156,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
             }
         });
 
-        jbQuitar.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
+        jbQuitar.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jbQuitar.setText("Quitar Inscripcion");
         jbQuitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,56 +168,53 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 41, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
+                        .addGap(232, 232, 232)
                         .addComponent(Binscribir)
-                        .addGap(98, 98, 98)
+                        .addGap(51, 51, 51)
                         .addComponent(jbQuitar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(202, 202, 202)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addGap(43, 43, 43)
-                                .addComponent(cbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(cbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(rbInscriptas)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rbNoInscriptas))
-                                .addComponent(jLabel1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(196, Short.MAX_VALUE))
+                                    .addComponent(rbNoInscriptas))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                    .addComponent(cbAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbNoInscriptas)
-                    .addComponent(rbInscriptas))
+                .addComponent(rbInscriptas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rbNoInscriptas)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbQuitar)
-                    .addComponent(Binscribir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Binscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbQuitar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
