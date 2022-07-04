@@ -55,10 +55,10 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jtidAlumno = new javax.swing.JTextField();
         jcActivo = new javax.swing.JCheckBox();
-        jdFechan = new com.toedter.calendar.JDateChooser();
         jrLegajo = new javax.swing.JRadioButton();
         jrDni = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
+        jdFechan = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setClosable(true);
@@ -69,7 +69,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(700, 770));
 
         jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 0, 24)); // NOI18N
-        jLabel1.setText("SEECCION ALUMNOS");
+        jLabel1.setText("SECCION ALUMNOS");
 
         jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jLabel2.setText("DNI");
@@ -175,15 +175,15 @@ public class AlumnoView extends javax.swing.JInternalFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(1, 1, 1)
                                         .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jdFechan, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(68, 68, 68)
+                                        .addComponent(jdFechan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel7)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jcActivo))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel2))
                                 .addGap(26, 26, 26)
@@ -203,7 +203,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
                                 .addComponent(jbModificar)
                                 .addGap(50, 50, 50)
                                 .addComponent(jbBorrar)))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,13 +218,13 @@ public class AlumnoView extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jdFechan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jcActivo)))
+                        .addComponent(jcActivo))
+                    .addComponent(jdFechan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -296,7 +296,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
                  jbBorrar.setEnabled(true);
             }
         }else{
-            JOptionPane.showMessageDialog(this,"El numero de legajo no se encuentra registrado en la base de datos");
+            JOptionPane.showMessageDialog(this,"El numero de dni no se encuentra registrado en la base de datos");
             limpiarCampos();
         }
         }
