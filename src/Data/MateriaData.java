@@ -138,8 +138,9 @@ public class MateriaData {
     
     public boolean borrarMateria(int id) {
 
+        
         boolean borrado = false;
-        String sql = "UPDATE materia SET activo = 0 WHERE idMateria = ?";
+        String sql = "DELETE FROM `materia` WHERE `idMateria` = ?";
         try {
 
             PreparedStatement ps = con.prepareStatement(sql);
