@@ -226,18 +226,24 @@
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
       <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtDniFocusLost"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtDniKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jtApellido">
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField2"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtApellidoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jtNombre">
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField3"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtNombreKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -259,6 +265,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtidAlumnoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jcActivo">
       <Properties>

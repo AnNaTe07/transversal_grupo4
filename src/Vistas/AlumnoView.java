@@ -110,15 +110,25 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         });
 
         jtDni.setText("jTextField1");
-        jtDni.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtDniFocusLost(evt);
+        jtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtDniKeyTyped(evt);
             }
         });
 
         jtApellido.setText("jTextField2");
+        jtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtApellidoKeyTyped(evt);
+            }
+        });
 
         jtNombre.setText("jTextField3");
+        jtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtNombreKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
         jLabel5.setText("Fecha de nacimiento");
@@ -127,6 +137,11 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         jLabel6.setText("Legajo");
 
         jtidAlumno.setText("jTextField1");
+        jtidAlumno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtidAlumnoKeyTyped(evt);
+            }
+        });
 
         jcActivo.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
         jcActivo.setText("Activo");
@@ -240,7 +255,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-     
+     try{
         if(jrLegajo.isSelected()){
         int legajo = Integer.parseInt(jtidAlumno.getText());
         Alumno aux =alumno.obtenerAlumnoXId(legajo);
@@ -262,9 +277,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this,"El numero de legajo no se encuentra registrado en la base de datos");
             limpiarCampos();
         }
-        }
-        
-        if(jrDni.isSelected()){
+        }else if(jrDni.isSelected()){
         long dni=Long.parseLong(jtDni.getText());  
         
         Alumno aux2= alumno.obtenerAlumnoXDNI(dni);
@@ -277,7 +290,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             jcActivo.setSelected(aux2.isActivo());
             jbModificar.setEnabled(true);
             jbBorrar.setEnabled(true);
-        }else{
+            }else{
                 JOptionPane.showMessageDialog(this,"El alumno se encuentra inactivo en la base de datos");
                  jbModificar.setEnabled(true);
                  jbBorrar.setEnabled(true);
@@ -286,7 +299,15 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this,"El numero de legajo no se encuentra registrado en la base de datos");
             limpiarCampos();
         }
+        }else{
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un campo primero");
+            limpiarCampos();
         }
+        
+     }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(this,"LLene los campos correctamente");
+                limpiarCampos();
+      }
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
@@ -304,7 +325,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
        
-         
+         try{
          long dni=Long.parseLong(jtDni.getText()); 
      
          String nombre=jtNombre.getText();
@@ -344,34 +365,25 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             }/*else{
                 JOptionPane.showMessageDialog(this,"El alumno ya se encuentra en la base de datos. \nO el dni ingresado es incorrecto");
             }*/
-        
+         }catch(NumberFormatException | NullPointerException e){
+             JOptionPane.showMessageDialog(this,"Llene los campos correctamente");
+         }
         
     }//GEN-LAST:event_jbGuardarActionPerformed
-
-    private void jtDniFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtDniFocusLost
-       
-        try{
-            long dni=Integer.parseInt(jtDni.getText());
-        }catch (NumberFormatException ex){
-            JOptionPane.showMessageDialog(this,"Debe ingresar un número");
-            jtDni.requestFocus();
-        }
-        
-    }//GEN-LAST:event_jtDniFocusLost
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
        
         int id=0;
         try{
             id=Integer.parseInt(jtidAlumno.getText());
-        }catch(Exception ex){
         
-             JOptionPane.showMessageDialog(this, "El campo legajo debe ser numérico");
-             jtidAlumno.requestFocus();
-        }
+        
+        //validar si el nombre y apellido no estan vacios
+        if(!jtNombre.getText().isEmpty() && !jtApellido.getText().isEmpty()){
+            
         String nombre=jtNombre.getText();
         String apellido=jtApellido.getText();
-        long dni=Long.parseLong(jtDni.getText());
+           long dni=Long.parseLong(jtDni.getText());
       
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         String fecha = formato.format(jdFechan.getDate());
@@ -388,10 +400,54 @@ public class AlumnoView extends javax.swing.JInternalFrame {
        
         }else{
              JOptionPane.showMessageDialog(this, "Error al intentar modificar la los datos, intentelo nuevamente");
-         }       
+        }  
+        }else{
+                         JOptionPane.showMessageDialog(this, "Llene los campos nombre y apellido correctamente");
+
+        }
+         
+        
+        }catch(NumberFormatException | NullPointerException e){
+             JOptionPane.showMessageDialog(this,"Llene los campos correctamente");
+        }
                 
     }//GEN-LAST:event_jbModificarActionPerformed
 
+    private void jtidAlumnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtidAlumnoKeyTyped
+        //no permite ingresar letras en el campo id
+        char c = evt.getKeyChar();
+        
+        if(c<'0'||c>'9'){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jtidAlumnoKeyTyped
+
+    private void jtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDniKeyTyped
+        // no permite ingresar letras en el campo dni
+        char c = evt.getKeyChar();
+        
+        if(c<'0'||c>'9'){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jtDniKeyTyped
+
+    private void jtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtApellidoKeyTyped
+        // no permite ingresar numeros en el campo nombnre
+        char c = evt.getKeyChar();
+        
+        if((c<'a'||c>'z') && (c<'A'||c>'Z')){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jtApellidoKeyTyped
+
+    private void jtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyTyped
+        // no permite ingresar numeros en el campo apellido
+        char c = evt.getKeyChar();
+        
+        if((c<'a'||c>'z') && (c<'A'||c>'Z')){
+        evt.consume();
+        }
+    }//GEN-LAST:event_jtNombreKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Grupo1;

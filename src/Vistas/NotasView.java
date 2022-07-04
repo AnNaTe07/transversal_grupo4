@@ -104,9 +104,20 @@ public class NotasView extends javax.swing.JInternalFrame {
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         TlistaMaterias.setEditingColumn(3);
         jScrollPane1.setViewportView(TlistaMaterias);
+        if (TlistaMaterias.getColumnModel().getColumnCount() > 0) {
+            TlistaMaterias.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         jbModificar.setFont(new java.awt.Font("NSimSun", 0, 14)); // NOI18N
         jbModificar.setText("Modificar Nota");
@@ -160,7 +171,7 @@ public class NotasView extends javax.swing.JInternalFrame {
 
     private void cbAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnosActionPerformed
         if(modelo.getRowCount() > 0){
-            limpiarTabla();
+            limpiarTabla();          
         }
         Alumno a = (Alumno) cbAlumnos.getSelectedItem();
         List<Inscripcion> materiasInscriptas = cursada.cursadasXAlumno(a);
@@ -170,8 +181,8 @@ public class NotasView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cbAlumnosActionPerformed
 
     private void jbModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificarActionPerformed
-
-        if(modelo.getRowCount() > 0){
+        
+        if(modelo.getRowCount() > 0){      
             Alumno alumno = (Alumno) cbAlumnos.getSelectedItem();
             int idMateria = (int) TlistaMaterias.getValueAt(TlistaMaterias.getSelectedRow(), 0);
             Materia materia = md.obtenerMateriaXId(idMateria);
