@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2022 a las 22:51:53
+-- Servidor: localhost
+-- Tiempo de generación: 04-07-2022 a las 19:25:28
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -58,15 +58,6 @@ CREATE TABLE `cursada` (
   `nota` double DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `cursada`
---
-
-INSERT INTO `cursada` (`id`, `idAlumno`, `idMateria`, `nota`) VALUES
-(1, 1, 1, 0),
-(2, 3, 1, 0),
-(3, 2, 2, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -79,14 +70,6 @@ CREATE TABLE `materia` (
   `anio` int(11) NOT NULL,
   `activo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `materia`
---
-
-INSERT INTO `materia` (`idMateria`, `nombre`, `anio`, `activo`) VALUES
-(1, 'Laboratorio 1', 1, 1),
-(2, 'Web 1', 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -143,8 +126,8 @@ ALTER TABLE `materia`
 -- Filtros para la tabla `cursada`
 --
 ALTER TABLE `cursada`
-  ADD CONSTRAINT `cursada_ibfk_1` FOREIGN KEY (`idAlumno`) REFERENCES `alumno` (`idAlumno`),
-  ADD CONSTRAINT `cursada_ibfk_2` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`idMateria`);
+  ADD CONSTRAINT `cursada_ibfk_1` FOREIGN KEY (`idAlumno`) REFERENCES `alumno` (`idAlumno`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cursada_ibfk_2` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`idMateria`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
