@@ -59,13 +59,13 @@ public class ConsultasView extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Consultas");
 
-        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 0, 24)); // NOI18N
         jLabel1.setText("ALUMNOS INSCRIPTOS EN MATERIAS ");
 
-        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jLabel2.setText("Materia");
 
-        jcmMaterias.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
+        jcmMaterias.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jcmMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcmMateriasActionPerformed(evt);
@@ -94,9 +94,9 @@ public class ConsultasView extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
+                        .addGap(108, 108, 108)
                         .addComponent(jLabel2)
-                        .addGap(29, 29, 29)
+                        .addGap(18, 18, 18)
                         .addComponent(jcmMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)

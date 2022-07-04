@@ -96,23 +96,23 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Inscripciones");
 
-        cbAlumnos.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
+        cbAlumnos.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         cbAlumnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbAlumnosActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 0, 24)); // NOI18N
         jLabel1.setText("FORMULARIO DE INSCRIPCION");
 
-        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jLabel2.setText("Alumno:");
 
-        jLabel3.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jLabel3.setText("Listado de materias");
 
-        rbNoInscriptas.setFont(new java.awt.Font("Gurmukhi MT", 1, 14)); // NOI18N
+        rbNoInscriptas.setFont(new java.awt.Font("Gurmukhi MT", 0, 14)); // NOI18N
         rbNoInscriptas.setText("No inscriptas");
         rbNoInscriptas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +148,7 @@ public class InscripcionView extends javax.swing.JInternalFrame {
         TlistaMaterias.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(TlistaMaterias);
 
-        rbInscriptas.setFont(new java.awt.Font("Gurmukhi MT", 1, 14)); // NOI18N
+        rbInscriptas.setFont(new java.awt.Font("Gurmukhi MT", 0, 14)); // NOI18N
         rbInscriptas.setText("Inscriptas");
         rbInscriptas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

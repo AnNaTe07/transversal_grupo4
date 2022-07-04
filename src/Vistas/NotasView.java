@@ -87,10 +87,10 @@ public class NotasView extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Calificaciones");
 
-        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gurmukhi MT", 0, 24)); // NOI18N
         jLabel1.setText("MANIPULACION DE NOTAS");
 
-        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Gurmukhi MT", 0, 18)); // NOI18N
         jLabel2.setText("Alumno");
 
         cbAlumnos.setFont(new java.awt.Font("Gurmukhi MT", 1, 18)); // NOI18N
@@ -114,7 +114,7 @@ public class NotasView extends javax.swing.JInternalFrame {
         TlistaMaterias.setEditingColumn(3);
         jScrollPane1.setViewportView(TlistaMaterias);
 
-        jbModificar.setFont(new java.awt.Font("Gurmukhi MT", 1, 14)); // NOI18N
+        jbModificar.setFont(new java.awt.Font("Gurmukhi MT", 0, 14)); // NOI18N
         jbModificar.setText("Modificar Nota");
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
