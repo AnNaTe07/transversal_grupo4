@@ -100,6 +100,11 @@ public class MateriaView extends javax.swing.JInternalFrame {
                 jtMateriaActionPerformed(evt);
             }
         });
+        jtMateria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtMateriaKeyTyped(evt);
+            }
+        });
 
         jtNumId.setEditable(false);
         jtNumId.setBackground(new java.awt.Color(235, 233, 233));
@@ -519,6 +524,20 @@ public class MateriaView extends javax.swing.JInternalFrame {
 
         
     }//GEN-LAST:event_jbBuscaMateriaXNombreActionPerformed
+
+    private void jtMateriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtMateriaKeyTyped
+         //no permite ingresar caracteres especiales en el campo materia
+        
+        
+        if(evt.getKeyChar() >= 33 && evt.getKeyChar()<=47
+           || evt.getKeyChar() >= 58 && evt.getKeyChar()<=64
+           || evt.getKeyChar() >= 91 && evt.getKeyChar()<=96
+           || evt.getKeyChar() >= 123 && evt.getKeyChar()<=208
+           || evt.getKeyChar() >= 210 && evt.getKeyChar()<=240
+           || evt.getKeyChar() >= 242 && evt.getKeyChar()<=255   
+           ){
+        evt.consume();}
+    }//GEN-LAST:event_jtMateriaKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

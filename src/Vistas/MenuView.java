@@ -19,6 +19,7 @@ public class MenuView extends javax.swing.JFrame {
         alumno = new AlumnoData(conexion);
         materia = new MateriaData(conexion);
         inscripcion = new CursadaData(conexion);
+        escritorio.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -45,7 +46,7 @@ public class MenuView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        escritorio.setLayout(null);
+        escritorio.setBackground(new java.awt.Color(51, 51, 51));
 
         jMenu2.setText("Archivo");
 
@@ -130,7 +131,7 @@ public class MenuView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
