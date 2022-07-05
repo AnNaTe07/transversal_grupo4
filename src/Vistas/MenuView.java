@@ -14,6 +14,8 @@ public class MenuView extends javax.swing.JFrame {
 
     public MenuView() {
         initComponents();
+        escritorio.setBorder(new ImagenEscritorio());
+        this.setExtendedState(MenuView.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
         conexion = new Conexion();
         alumno = new AlumnoData(conexion);
